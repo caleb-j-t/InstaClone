@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		134446788D9ABBDAB212652E /* Pods_InstaClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C62700FCD6F5829A58205A1 /* Pods_InstaClone.framework */; };
+		F967A4D41D179BF6003C5BAC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967A4D31D179BF6003C5BAC /* FeedViewController.swift */; };
+		F97477551D184F8C001094DB /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97477541D184F8C001094DB /* FeedTableViewCell.swift */; };
+		F9B48F891D18766C0031C5FC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F881D18766C0031C5FC /* Post.swift */; };
 		F9D0A22F1D14B03C000AB9E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */; };
 		F9D0A2311D14B03C000AB9E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A2301D14B03C000AB9E0 /* ViewController.swift */; };
 		F9D0A2341D14B03C000AB9E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D0A2321D14B03C000AB9E0 /* Main.storyboard */; };
@@ -20,6 +23,9 @@
 		2E0CB590AEEF27F9FEA74FD9 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
 		8C62700FCD6F5829A58205A1 /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A103523C9F25AB142A66E3 /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
+		F967A4D31D179BF6003C5BAC /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		F97477541D184F8C001094DB /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		F9B48F881D18766C0031C5FC /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F9D0A22B1D14B03B000AB9E0 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D0A2301D14B03C000AB9E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +56,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F967A4CC1D173C65003C5BAC /* Feed Files */ = {
+			isa = PBXGroup;
+			children = (
+				F967A4D31D179BF6003C5BAC /* FeedViewController.swift */,
+				F97477541D184F8C001094DB /* FeedTableViewCell.swift */,
+			);
+			name = "Feed Files";
+			sourceTree = "<group>";
+		};
 		F9D0A2221D14B03B000AB9E0 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +86,8 @@
 		F9D0A22D1D14B03C000AB9E0 /* InstaClone */ = {
 			isa = PBXGroup;
 			children = (
+				F9B48F881D18766C0031C5FC /* Post.swift */,
+				F967A4CC1D173C65003C5BAC /* Feed Files */,
 				F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */,
 				F9D0A2301D14B03C000AB9E0 /* ViewController.swift */,
 				F9D0A2321D14B03C000AB9E0 /* Main.storyboard */,
@@ -215,7 +232,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9D0A2311D14B03C000AB9E0 /* ViewController.swift in Sources */,
+				F97477551D184F8C001094DB /* FeedTableViewCell.swift in Sources */,
+				F967A4D41D179BF6003C5BAC /* FeedViewController.swift in Sources */,
 				F9D0A22F1D14B03C000AB9E0 /* AppDelegate.swift in Sources */,
+				F9B48F891D18766C0031C5FC /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
