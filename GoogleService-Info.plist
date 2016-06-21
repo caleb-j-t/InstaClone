@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>447219440500-2j2uok5argks7ri4an9ril57msgujt1m.apps.googleusercontent.com</string>
+	<string>206338975112-s7e5scmp7gnnh739cnbv3ko8itovoh4n.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.447219440500-2j2uok5argks7ri4an9ril57msgujt1m</string>
+	<string>com.googleusercontent.apps.206338975112-s7e5scmp7gnnh739cnbv3ko8itovoh4n</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBsHG3evXS0NPR6bkLSCt53jJ5Qs-od2M8</string>
+	<string>AIzaSyDbFxp1mWII8kXYDUuypg05wR2DhlkRuK8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>447219440500</string>
+	<string>206338975112</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.caleblwoods.FIRTutorial</string>
+	<string>com.caleblwoods.InstaClone</string>
 	<key>PROJECT_ID</key>
-	<string>firdatabase-tutorial</string>
+	<string>fauxstagram</string>
 	<key>STORAGE_BUCKET</key>
-	<string>firdatabase-tutorial.appspot.com</string>
+	<string>fauxstagram.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:447219440500:ios:ef2df3d8d08dd32c</string>
+	<string>1:206338975112:ios:dcfb485e832237da</string>
 	<key>DATABASE_URL</key>
-	<string>https://firdatabase-tutorial.firebaseio.com</string>
+	<string>https://fauxstagram.firebaseio.com</string>
 </dict>
 </plist>
