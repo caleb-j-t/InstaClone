@@ -10,6 +10,7 @@ import UIKit
 
 class Post: NSObject {
 
+    var key: String?
     var postedby: String?
     var statusText: String?
     var imageURL: String?

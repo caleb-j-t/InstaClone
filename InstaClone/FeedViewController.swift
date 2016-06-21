@@ -21,6 +21,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var userName: String?
     var statusText: String?
     var arrayForTable: Array = [Post]()
+    var contentHeight: CGFloat?
+    
+    var tableScrollPosition: CGFloat = CGFloat()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -34,13 +37,14 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.postRef.observeEventType(.Value) { (snap: FIRDataSnapshot) in
             self.arrayForTable = []
             self.receivedPosts = (snap.value as? NSDictionary)!
-            for (key, value) in self.receivedPosts {
+            for (key, _) in self.receivedPosts {
                 if let post = self.receivedPosts["\(key)"] as? NSDictionary {
                     let newPost = Post()
+                    newPost.key = key as? String
                     newPost.postedby = post["postedby"] as? String
                     newPost.statusText = post["status"] as? String
                     newPost.imageURL = post["image"] as? String
-                    if let numberOfLikes = post.valueForKey("likes")?.valueForKey("number") as? Int {
+                    if let numberOfLikes = post.valueForKey("likenumber") as? Int {
                         newPost.numberOfLikes = numberOfLikes
                     }
                     if let numberOfComments = post.valueForKey("comments")?.valueForKey("number") as? Int {
@@ -49,28 +53,58 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     self.arrayForTable.append(newPost)
                 }
                 self.tableView.reloadData()
+                self.tableView.contentOffset.y = self.tableScrollPosition
+            }
         }
-        }
-    
-//            self.postRef.observeEventType(.ChildAdded) { (snap: FIRDataSnapshot) in
-//            let newPost = (snap.value as? NSDictionary)!
-//            self.arrayForTable.append(newPost)
-//                }
-//        
-//
-//            self.tableView.reloadData()
-
+        
     }
     
+   
     
-    // in view did appear, i should observe for a one time event and get .Value... then I should get child added as necessary
+    func likeButtonClicked(sender: UIButton){
+       
+        tableScrollPosition = tableView.contentOffset.y
+        
+        let buttonRow = sender.tag
+        
+        let dictForCell = arrayForTable[buttonRow]
+        
+        postRef.child(dictForCell.key!).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
+            if var post = currentData.value as? [String : AnyObject], let uid = dictForCell.postedby
+                //                FIRAuth.auth()?.currentUser?.uid
+            {
+                var likes : Dictionary<String, Bool>
+                likes = post["likedby"] as? [String : Bool] ?? [:]
+                var likeCount = post["likenumber"] as? Int ?? 0
+                if let _ = likes[uid] {
+                    // Unstar the post and remove self from stars
+                    likeCount -= 1
+                    likes.removeValueForKey(uid)
+                } else {
+                    // Star the post and add self to stars
+                    likeCount += 1
+                    likes[uid] = true
+                }
+                post["likenumber"] = likeCount
+                post["likedby"] = likes
+                
+                // Set value and report transaction success
+                currentData.value = post
+                
+                return FIRTransactionResult.successWithValue(currentData)
+            }
+            return FIRTransactionResult.successWithValue(currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PostCell", forIndexPath: indexPath) as! FeedTableViewCell
         
         let dictForCell = arrayForTable[indexPath.section]
-        
-//        cell.textLabel?.text = dictForTable["postedby"] as? String
         
         if let postedBy = dictForCell.postedby {
             if let statusText = dictForCell.statusText {
@@ -78,13 +112,15 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
         
-//        let imageRef = storageRef.referenceForURL(<#T##string: String##String#>)
-//        if let imageURL = dictForCell.imageURL! as? String {
-//            cell.cellImageView = storageRef.child(imageURL)
+        cell.commentsTextLabel.text = "\(dictForCell.numberOfComments) comments"
+        cell.likesTextLabel.text = "❤︎ \(dictForCell.numberOfLikes) likes"
+        
         if let urlString = dictForCell.imageURL {
-        cell.cellImageView.kf_setImageWithURL(NSURL(string: urlString)!)
+            cell.cellImageView.kf_setImageWithURL(NSURL(string: urlString)!)
         }
-//        }
+
+        cell.likeButton.tag = indexPath.section
+        cell.likeButton.addTarget(self, action: #selector(FeedViewController.likeButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         return cell
     }
@@ -108,14 +144,5 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return arrayForTable.count
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
