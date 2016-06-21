@@ -50,12 +50,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             if let user = user {
                 // If the user is signed in, show the home page.
                 
-                let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+                let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 // Uncomment this when we get feed done and add HomeView as the storyboard id.
                 
-                let profileViewController: UIViewController = loginStoryBoard.instantiateViewControllerWithIdentifier("ProfileView")
+                let mainViewController: UITabBarController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView") as! UITabBarController
                 
-                self.presentViewController(profileViewController, animated: true, completion: nil)
+                self.presentViewController(mainViewController, animated: true, completion: nil)
                 
             } else {
                 // If user is signed out, show the login button.

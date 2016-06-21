@@ -119,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="70" y="279"/>
         </scene>
-        <!--Profile-->
+        <!--Main-->
         <scene sceneID="j5g-vC-PTo">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="7qg-Po-j1y" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" id="7qg-Po-j1y" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idv-th-vHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="523" y="125"/>
@@ -253,10 +253,10 @@
             </objects>
             <point key="canvasLocation" x="892" y="279"/>
         </scene>
-        <!--Profile-->
+        <!--Main-->
         <scene sceneID="JFA-Bt-q7S">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="KVQ-LI-K8D" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" id="KVQ-LI-K8D" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2Z-nz-oKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1441" y="250"/>
