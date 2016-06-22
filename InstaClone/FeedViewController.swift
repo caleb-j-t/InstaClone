@@ -10,11 +10,13 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseAuth
 import Kingfisher
 
-class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate {
     
     let postRef = FIRDatabase.database().reference().child("posts")
+    var userRef: FIRDatabaseReference?
     let storageRef = FIRStorage.storage()
     
     var receivedPosts = NSDictionary()
@@ -22,6 +24,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var statusText: String?
     var arrayForTable: Array = [Post]()
     var contentHeight: CGFloat?
+
+    var currentUser = User()
     
     var tableScrollPosition: CGFloat = CGFloat()
     
@@ -29,6 +33,12 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        print(currentUser.userID)
+        print(currentUser.userQuote)
+        
+        tabBarController?.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -143,6 +153,5 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return arrayForTable.count
     }
-    
     
 }
