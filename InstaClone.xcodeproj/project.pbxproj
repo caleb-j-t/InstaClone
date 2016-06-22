@@ -18,10 +18,12 @@
 		46EBD6431D18AE2B00361628 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */; };
 		46EBD6471D19943200361628 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46EBD6461D19943200361628 /* GoogleService-Info.plist */; };
 		46EBD6491D19A17600361628 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD6481D19A17600361628 /* ProfileViewController.swift */; };
-		46EBD64C1D19A53100361628 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46EBD64A1D19A53100361628 /* Profile.storyboard */; };
 		F9B48F8D1D19EF170031C5FC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967A4D31D179BF6003C5BAC /* FeedViewController.swift */; };
 		F9B48F8E1D19EF170031C5FC /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97477541D184F8C001094DB /* FeedTableViewCell.swift */; };
 		F9B48F921D19EF5D0031C5FC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F881D18766C0031C5FC /* Post.swift */; };
+		F9B48F951D1A09020031C5FC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F941D1A09020031C5FC /* AccountViewController.swift */; };
+		F9B48F971D1A23220031C5FC /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F961D1A23220031C5FC /* ProfileCollectionViewCell.swift */; };
+		F9B48F991D1AD5090031C5FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F981D1AD5090031C5FC /* User.swift */; };
 		F9D0A22F1D14B03C000AB9E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */; };
 		F9D0A2311D14B03C000AB9E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A2301D14B03C000AB9E0 /* ViewController.swift */; };
 		F9D0A2341D14B03C000AB9E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D0A2321D14B03C000AB9E0 /* Main.storyboard */; };
@@ -41,12 +43,14 @@
 		46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		46EBD6461D19943200361628 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46EBD6481D19A17600361628 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		46EBD64B1D19A53100361628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		8C62700FCD6F5829A58205A1 /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A103523C9F25AB142A66E3 /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
 		F967A4D31D179BF6003C5BAC /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		F97477541D184F8C001094DB /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		F9B48F881D18766C0031C5FC /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F9B48F941D1A09020031C5FC /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		F9B48F961D1A23220031C5FC /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		F9B48F981D1AD5090031C5FC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F9D0A22B1D14B03B000AB9E0 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D0A2301D14B03C000AB9E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,10 +98,21 @@
 		F9B48F8C1D19E44A0031C5FC /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				46EBD6381D1859B200361628 /* Login.storyboard */,
 				46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */,
+				46EBD63A1D1859D700361628 /* LoginViewController.swift */,
+				46EBD6381D1859B200361628 /* Login.storyboard */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		F9B48F931D1A03310031C5FC /* Profile Files */ = {
+			isa = PBXGroup;
+			children = (
+				46EBD6481D19A17600361628 /* ProfileViewController.swift */,
+				F9B48F961D1A23220031C5FC /* ProfileCollectionViewCell.swift */,
+				F9B48F941D1A09020031C5FC /* AccountViewController.swift */,
+			);
+			name = "Profile Files";
 			sourceTree = "<group>";
 		};
 		F9D0A2221D14B03B000AB9E0 = {
@@ -123,13 +138,12 @@
 			children = (
 				F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */,
 				F9B48F881D18766C0031C5FC /* Post.swift */,
+				F9B48F981D1AD5090031C5FC /* User.swift */,
 				F9B48F8C1D19E44A0031C5FC /* Login */,
 				F967A4CC1D173C65003C5BAC /* Feed Files */,
+				F9B48F931D1A03310031C5FC /* Profile Files */,
 				F9D0A2301D14B03C000AB9E0 /* ViewController.swift */,
-				46EBD63A1D1859D700361628 /* LoginViewController.swift */,
 				F9D0A2321D14B03C000AB9E0 /* Main.storyboard */,
-				46EBD6481D19A17600361628 /* ProfileViewController.swift */,
-				46EBD64A1D19A53100361628 /* Profile.storyboard */,
 				46EBD63E1D18894800361628 /* PhotoDisplay.storyboard */,
 				46EBD6401D18895C00361628 /* PhotoDisplayViewController.swift */,
 				F9D0A2351D14B03C000AB9E0 /* Assets.xcassets */,
@@ -215,7 +229,6 @@
 				F9D0A2391D14B03C000AB9E0 /* LaunchScreen.storyboard in Resources */,
 				F9D0A2361D14B03C000AB9E0 /* Assets.xcassets in Resources */,
 				46EBD6391D1859B200361628 /* Login.storyboard in Resources */,
-				46EBD64C1D19A53100361628 /* Profile.storyboard in Resources */,
 				F9D0A2341D14B03C000AB9E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,9 +291,12 @@
 				F9B48F921D19EF5D0031C5FC /* Post.swift in Sources */,
 				F9B48F8D1D19EF170031C5FC /* FeedViewController.swift in Sources */,
 				F9B48F8E1D19EF170031C5FC /* FeedTableViewCell.swift in Sources */,
+				F9B48F971D1A23220031C5FC /* ProfileCollectionViewCell.swift in Sources */,
 				46EBD6491D19A17600361628 /* ProfileViewController.swift in Sources */,
 				46EBD6431D18AE2B00361628 /* CreateAccountViewController.swift in Sources */,
 				46EBD6411D18895C00361628 /* PhotoDisplayViewController.swift in Sources */,
+				F9B48F951D1A09020031C5FC /* AccountViewController.swift in Sources */,
+				F9B48F991D1AD5090031C5FC /* User.swift in Sources */,
 				46EBD63B1D1859D700361628 /* LoginViewController.swift in Sources */,
 				F9D0A2311D14B03C000AB9E0 /* ViewController.swift in Sources */,
 				F9D0A22F1D14B03C000AB9E0 /* AppDelegate.swift in Sources */,
@@ -290,14 +306,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		46EBD64A1D19A53100361628 /* Profile.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				46EBD64B1D19A53100361628 /* Base */,
-			);
-			name = Profile.storyboard;
-			sourceTree = "<group>";
-		};
 		F9D0A2321D14B03C000AB9E0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
