@@ -67,7 +67,7 @@ class PhotoDisplayViewController: UIViewController, UITableViewDelegate, UITable
             // Are we retrieving a string or array?
             self.receivedPosts = (snap.value as? NSDictionary)!
             for (key, _) in self.receivedPosts {
-                if let post = self.receivedPosts["\(key)"] as? NSDictionary {
+              if let post = self.receivedPosts["\(key)"] as? NSDictionary {
                     let newPost = Post()
                     newPost.key = key as? String
                     newPost.postedby = post["postedby"] as? String
