@@ -33,12 +33,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewDidLoad()
         
         if userID == nil {
+            if let userID = currentUser.userID {
+                loadUserData(userID)
+            }
+        } else {
             
         }
         
-        if let userID = currentUser.userID {
-        loadUserData(userID)
-        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
