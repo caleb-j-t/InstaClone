@@ -13,7 +13,7 @@ import FirebaseDatabase
 
 class PhotoDisplayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let postRef = FIRDatabase.database().reference().child("posts")
+    let postRef = FIRDatabase.database().reference().child("posts").child("post2")
     let storageRef = FIRStorage.storage()
     
     @IBOutlet weak var tableView: UITableView!
@@ -28,35 +28,37 @@ class PhotoDisplayViewController: UIViewController, UITableViewDelegate, UITable
     var dateArray = [NSDate?]()
     var picArray = [UIImage]()
     var titleArray = [String]()
- 
+    
+    var selectedPost = Post()
+    var user = FIRAuth.auth()
     
     
     
-
-
-
- 
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Photo View"
         
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 450
-
+        //        tableView.rowHeight = UITableViewAutomaticDimension
+        //        tableView.estimatedRowHeight = 450
+        
         
         refresh()
-
-// Swipe gesture to go back a page.
         
-//        let swiperight: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(LoginViewController.swiperight(_:)))
-//        swiperight.direction = .Right
-//        self.view!.addGestureRecognizer(swiperight)
-    
-
-    
-    
-    
-    
+        // Swipe gesture to go back a page.
+        
+        //        let swiperight: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(LoginViewController.swiperight(_:)))
+        //        swiperight.direction = .Right
+        //        self.view!.addGestureRecognizer(swiperight)
+        
+        
+        
+        
+        
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -66,24 +68,21 @@ class PhotoDisplayViewController: UIViewController, UITableViewDelegate, UITable
             self.arrayForTable = []
             // Are we retrieving a string or array?
             self.receivedPosts = (snap.value as? NSDictionary)!
-            for (key, _) in self.receivedPosts {
-              if let post = self.receivedPosts["\(key)"] as? NSDictionary {
-                    let newPost = Post()
-                    newPost.key = key as? String
-                    newPost.postedby = post["postedby"] as? String
-                    newPost.statusText = post["status"] as? String
-                    newPost.imageURL = post["image"] as? String
-                    if let numberOfLikes = post.valueForKey("likenumber") as? Int {
-                        newPost.numberOfLikes = numberOfLikes
-                    }
-                    if let numberOfComments = post.valueForKey("comments")?.valueForKey("number") as? Int {
-                        newPost.numberOfComments = numberOfComments
-                    }
-                    self.arrayForTable.append(newPost)
-                }
-                self.tableView.reloadData()
-                self.tableView.contentOffset.y = self.tableScrollPosition
-            }
+//            let myTopPostsQuery = (ref.child("user-posts").child(getUid())).queryOrderedByChild("starCount")
+            //            for (key, _) in self.receivedPosts {
+            //              if let post = self.receivedPosts["\(key)"] as? NSDictionary {
+                self.selectedPost.key = 
+                self.selectedPost.postedby =
+                self.selectedPost.statusText =
+                self.selectedPost.imageURL =
+                self.selectedPost.numberOfLikes =
+                self.selectedPost.numberOfComments =
+                
+                self.arrayForTable.append(self.selectedPost)
+            //                }
+            self.tableView.reloadData()
+            self.tableView.contentOffset.y = self.tableScrollPosition
+            //            }
         }
         
     }
@@ -128,7 +127,7 @@ class PhotoDisplayViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
     }
-
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath) as! PostCell
@@ -166,13 +165,13 @@ class PhotoDisplayViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
-
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
         return 1
-      //  return usernameArray.count
-
+        //  return usernameArray.count
+        
     }
     
     
@@ -181,7 +180,7 @@ class PhotoDisplayViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     
-
+    
     
     
     func refresh() {
@@ -189,35 +188,35 @@ class PhotoDisplayViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func goBack() {
-//        let profileViewController: UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("ProfileView")
-//        
-//        self.presentViewController(profileViewController, animated: true, completion: nil)
-}
-
+        //        let profileViewController: UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("ProfileView")
+        //
+        //        self.presentViewController(profileViewController, animated: true, completion: nil)
+    }
+    
     
     func swiperight(gestureRecognizer: UISwipeGestureRecognizer) {
         //Do what you want here to go back
         
-    goBack()
+        goBack()
         
     }
-
+    
     @IBAction func userNameButtonTapped(sender: AnyObject) {
         
-     
-    goBack()
-    
+        
+        goBack()
+        
     }
     @IBAction func heartButtonTapped(sender: AnyObject) {
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
