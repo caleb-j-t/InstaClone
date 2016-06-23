@@ -233,11 +233,12 @@
                     <tabBarItem key="tabBarItem" title="Home" id="2Qb-aI-0vv"/>
                     <connections>
                         <outlet property="tableView" destination="mbP-jd-CVz" id="I8P-QT-mZr"/>
+                        <segue destination="Sgb-y6-EoR" kind="show" identifier="ToProfile" id="hyS-Fq-FMW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bez-gT-bXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2588" y="1248"/>
+            <point key="canvasLocation" x="-2644" y="1248"/>
         </scene>
         <!--Profile-->
         <scene sceneID="wLs-R6-WTK">
@@ -251,18 +252,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylx-Kc-mUO">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Profile Page" id="DiP-EX-dKe">
-                                        <barButtonItem key="rightBarButtonItem" title="Account" id="Kib-4F-LJe">
-                                            <connections>
-                                                <segue destination="6qR-T8-c2h" kind="presentation" id="mWS-sT-UUf"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3sC-EJ-qXf">
                                 <rect key="frame" x="20" y="77" width="62" height="63"/>
                                 <constraints>
@@ -333,6 +322,30 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylx-Kc-mUO">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Profile Page" id="DiP-EX-dKe">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="UdK-BJ-jP6">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AOv-fp-A5B">
+                                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Back"/>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="3Hv-02-nUu">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pPq-Wz-YuX">
+                                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Account"/>
+                                                <connections>
+                                                    <segue destination="6qR-T8-c2h" kind="presentation" id="bwJ-RR-d3j"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -358,6 +371,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="SsY-uY-c4Q"/>
                     <connections>
+                        <outlet property="accountButton" destination="pPq-Wz-YuX" id="xWY-lf-gVM"/>
+                        <outlet property="backButton" destination="AOv-fp-A5B" id="ZiT-M2-KYi"/>
                         <outlet property="collectionView" destination="ntJ-cT-8V9" id="xv7-hM-OXt"/>
                         <outlet property="profilePicture" destination="3sC-EJ-qXf" id="Q0K-4y-2h7"/>
                         <outlet property="segmentedControl" destination="r13-Jr-bVp" id="PBW-cK-jUT"/>
@@ -395,7 +410,7 @@
         <!--Search-->
         <scene sceneID="F5O-YY-erI">
             <objects>
-                <viewController id="0gi-jP-zgI" sceneMemberID="viewController">
+                <viewController id="0gi-jP-zgI" customClass="SearchViewController" customModule="InstaClone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vtg-RQ-mhO"/>
                         <viewControllerLayoutGuide type="bottom" id="Pfj-7q-GTO"/>
@@ -404,48 +419,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aUp-r8-OuI">
-                                <rect key="frame" x="0.0" y="150" width="600" height="401"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t1b-qb-8uV">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MaF-rm-RRf">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CCX-Vc-xR7">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="CCX-Vc-xR7">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="0gi-jP-zgI" id="rhI-2B-g1E"/>
+                                </connections>
                             </searchBar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PTU-UJ-sph">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTU-UJ-sph">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Search" id="xzt-1S-rIC"/>
                                 </items>
                             </navigationBar>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ckz-Yd-WmB">
-                                <rect key="frame" x="20" y="114" width="560" height="29"/>
-                                <segments>
-                                    <segment title="People"/>
-                                    <segment title="Tags"/>
-                                    <segment title="Places"/>
-                                </segments>
-                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aUp-r8-OuI">
+                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t1b-qb-8uV">
+                                    <size key="itemSize" width="184" height="177"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellID" id="MaF-rm-RRf" customClass="SearchCollectionViewCell" customModule="InstaClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="184" height="177"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="184" height="177"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hH6-I9-6bw">
+                                                    <rect key="frame" x="8" y="8" width="168" height="161"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="hH6-I9-6bw" firstAttribute="top" secondItem="MaF-rm-RRf" secondAttribute="topMargin" id="1Cg-ji-CaM"/>
+                                            <constraint firstItem="hH6-I9-6bw" firstAttribute="leading" secondItem="MaF-rm-RRf" secondAttribute="leadingMargin" id="3Oy-Sh-BOH"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="hH6-I9-6bw" secondAttribute="bottom" id="AMU-V4-aKh"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="hH6-I9-6bw" secondAttribute="trailing" id="Aa8-zi-uHU"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="searchImageView" destination="hH6-I9-6bw" id="caL-Pw-JGv"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="0gi-jP-zgI" id="upu-Pt-Gvg"/>
+                                    <outlet property="delegate" destination="0gi-jP-zgI" id="Oyz-ym-AOP"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PTU-UJ-sph" secondAttribute="trailing" id="1Nb-X0-NSW"/>
+                            <constraint firstItem="Pfj-7q-GTO" firstAttribute="top" secondItem="aUp-r8-OuI" secondAttribute="bottom" id="PrB-da-k0K"/>
+                            <constraint firstItem="CCX-Vc-xR7" firstAttribute="top" secondItem="PTU-UJ-sph" secondAttribute="bottom" id="XxQ-pg-igP"/>
+                            <constraint firstItem="aUp-r8-OuI" firstAttribute="leading" secondItem="1Oa-ea-otx" secondAttribute="leading" id="YGb-G5-ig5"/>
+                            <constraint firstAttribute="trailing" secondItem="aUp-r8-OuI" secondAttribute="trailing" id="Yen-Hm-5dL"/>
+                            <constraint firstItem="PTU-UJ-sph" firstAttribute="top" secondItem="Vtg-RQ-mhO" secondAttribute="bottom" id="g17-V9-maO"/>
+                            <constraint firstItem="PTU-UJ-sph" firstAttribute="leading" secondItem="1Oa-ea-otx" secondAttribute="leading" id="jNH-4C-b6C"/>
+                            <constraint firstItem="aUp-r8-OuI" firstAttribute="top" secondItem="CCX-Vc-xR7" secondAttribute="bottom" id="mzC-pd-Le6"/>
+                            <constraint firstItem="CCX-Vc-xR7" firstAttribute="leading" secondItem="1Oa-ea-otx" secondAttribute="leading" id="uyA-w1-quF"/>
+                            <constraint firstAttribute="trailing" secondItem="CCX-Vc-xR7" secondAttribute="trailing" id="w8E-dU-9nM"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="cJu-nh-61b"/>
+                    <connections>
+                        <outlet property="collectionView" destination="aUp-r8-OuI" id="Z3a-M7-Pcf"/>
+                        <outlet property="searchBar" destination="CCX-Vc-xR7" id="jm0-bF-1h4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3s-jY-Pef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -619,4 +664,7 @@
     <resources>
         <image name="firefly_0" width="1280" height="720"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hyS-Fq-FMW"/>
+    </inferredMetricsTieBreakers>
 </document>
