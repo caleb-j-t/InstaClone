@@ -46,6 +46,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         searchPhotos(searchText)
     }
     
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
     func searchPhotos(searchText: String) {
         arrayForResults = []
         for post in arrayFromSearch {

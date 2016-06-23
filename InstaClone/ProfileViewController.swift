@@ -49,16 +49,16 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             backButton.tintColor = UIColor.clearColor()
         } else {
             accountButton.enabled = false
-            accountButton.tintColor = UIColor.clearColor()
             backButton.enabled = true
-            backButton.tintColor = UIColor.clearColor()
         }
         
         
     }
     
     override func viewWillAppear(animated: Bool) {
-        profilePicture.kf_setImageWithURL((authUser?.photoURL)!, placeholderImage: nil, optionsInfo: [.ForceRefresh])
+        if let photoURL = authUser?.photoURL {
+        profilePicture.kf_setImageWithURL(photoURL, placeholderImage: nil, optionsInfo: [.ForceRefresh])
+        } 
     }
     
     func loadUserData(userID: String) {
@@ -67,6 +67,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             
             self.arrayForURLs = []
             
+            if snap.value != nil {
             let userData = snap.value as! NSDictionary
             
             self.userNameTextLabel.text = userData["screenname"] as? String
@@ -83,7 +84,19 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             dispatch_async(dispatch_get_main_queue(), { 
                 self.collectionView.reloadData()
             })
+            } else {
+                let alertController = UIAlertController(title: "Set up a profile", message: "It looks like you don't have a profile yet. Click below to create a profile and upload a profile photo.", preferredStyle: UIAlertControllerStyle.Alert)
+                let createProfileButton = UIAlertAction(title: "Create a Profile", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
+                    self.performSegueWithIdentifier("ToAccount", sender: self)
+                })
+                alertController.addAction(createProfileButton)
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
         }
+    }
+    
+    @IBAction func onBackButtonTapped(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

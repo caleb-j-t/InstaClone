@@ -252,23 +252,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3sC-EJ-qXf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="daff35_94ba58407fd14cbfb3a0394ff34127be.png_256" translatesAutoresizingMaskIntoConstraints="NO" id="3sC-EJ-qXf">
                                 <rect key="frame" x="20" y="77" width="62" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="XIJ-Ex-nnL"/>
                                     <constraint firstAttribute="height" constant="63" id="ehl-5w-5RM"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDz-ke-UbL">
-                                <rect key="frame" x="20" y="148" width="560" height="33"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="6F9-7Z-0vq"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ntJ-cT-8V9">
                                 <rect key="frame" x="0.0" y="244" width="600" height="307"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -286,8 +276,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="206" height="176"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGa-Xy-cBv">
-                                                    <rect key="frame" x="0.0" y="0.0" width="266" height="222"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QGa-Xy-cBv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="206" height="176"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -325,12 +315,15 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylx-Kc-mUO">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Profile Page" id="DiP-EX-dKe">
+                                    <navigationItem title="Profile" id="DiP-EX-dKe">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="UdK-BJ-jP6">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AOv-fp-A5B">
                                                 <rect key="frame" x="20" y="7" width="133" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <action selector="onBackButtonTapped:" destination="Sgb-y6-EoR" eventType="touchUpInside" id="L9v-Hz-7Fb"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="3Hv-02-nUu">
@@ -339,13 +332,23 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Account"/>
                                                 <connections>
-                                                    <segue destination="6qR-T8-c2h" kind="presentation" id="bwJ-RR-d3j"/>
+                                                    <segue destination="6qR-T8-c2h" kind="presentation" identifier="ToAccount" id="bwJ-RR-d3j"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDz-ke-UbL">
+                                <rect key="frame" x="20" y="148" width="560" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="6F9-7Z-0vq"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -536,7 +539,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="firefly_0" translatesAutoresizingMaskIntoConstraints="NO" id="Z6n-YY-YGd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="daff35_94ba58407fd14cbfb3a0394ff34127be.png_256" translatesAutoresizingMaskIntoConstraints="NO" id="Z6n-YY-YGd">
                                 <rect key="frame" x="236" y="78" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="kzH-Lt-HRX"/>
@@ -652,16 +655,9 @@
             </objects>
             <point key="canvasLocation" x="-1104" y="2321"/>
         </scene>
-        <!--ProfileView-->
-        <scene sceneID="1A9-QM-CiC">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ProfileView" storyboardName="Profile" referencedIdentifier="ProfileView" id="A9i-1b-cFa" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yBW-iq-EPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1809" y="3424"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="daff35_94ba58407fd14cbfb3a0394ff34127be.png_256" width="256" height="256"/>
         <image name="firefly_0" width="1280" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -41,18 +41,21 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         selectPictureButton.hidden = true
         
-        if currentUser.displayName != nil {
-            usernameTextLabel.text = currentUser.displayName
-            usernameTextLabel.hidden = false
-        } else {
-            screennameTextField.hidden = false
-            usernameTextLabel.hidden = true
-        }
+            if let displayName = currentUser.displayName {
+            usernameTextLabel.text = displayName
+            } else {
+                usernameTextLabel.text = "Click the \"Edit Profile\" button to get started."
+            }
+         
         
         if let quote = currentUser.userQuote {
             userQuoteTextView.text = quote
         }
-        profilePictureImageView.kf_setImageWithURL((authUser?.photoURL)!, placeholderImage: nil, optionsInfo: [.ForceRefresh])
+        
+        if let photoURL = authUser?.photoURL {
+        profilePictureImageView.kf_setImageWithURL(photoURL, placeholderImage: nil, optionsInfo: [.ForceRefresh])
+        }
+        
     }
 
 
@@ -142,7 +145,7 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     func saveImage(image: UIImage) {
         let data: NSData = UIImageJPEGRepresentation(image, 0.3)!
         let uploadRef = storageRef.child("\(currentUser.userID) + profileimages")
-        let uploadTask = uploadRef.putData(data, metadata: nil) { (metadata: FIRStorageMetadata?, error: NSError?) in
+        uploadRef.putData(data, metadata: nil) { (metadata: FIRStorageMetadata?, error: NSError?) in
             
             if error != nil {
                 print("error during uploading: \(error)")

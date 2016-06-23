@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class CreateAccountViewController: UIViewController {
 
@@ -16,6 +18,8 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
     
+    let usersRef = FIRDatabase.database().reference().child("users")
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +34,28 @@ class CreateAccountViewController: UIViewController {
             
             if error == nil {
                 print("User Created")
-            self.performSegueWithIdentifier("toProfile", sender: self)
-            }
+                
+                let currentUserUID = FIRAuth.auth()?.currentUser?.uid
+                
+                
+                if let userID = currentUserUID {
+                        self.usersRef.child(userID).child("profilepicture").setValue("")
+                        self.usersRef.child(userID).child("screenname").setValue(self.usernameField.text)
+                        self.usersRef.child(userID).child("userquote").setValue("")
+                }
+                
+                let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+                
+                let mainViewController: UITabBarController = loginStoryBoard.instantiateViewControllerWithIdentifier("TabBarView") as! UITabBarController
+                
+                self.presentViewController(mainViewController, animated: true, completion: nil)            }
+                
             else {
                 print(error?.description)
                 print("User Not Created")
                 
             }
-            
         }
     }
 }

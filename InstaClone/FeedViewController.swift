@@ -138,17 +138,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        
-//        let dictForTable = arrayForTable[section]
-//        
-//        if let postedBy = dictForTable.postedby {
-//            return postedBy
-//        } else {
-//            return ""
-//        }
-//    }
-    
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let dictForCell = arrayForTable[section]
@@ -160,7 +149,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let userName = dictForCell.postedby {
             label.text = userName
         }
-        label.backgroundColor = UIColor.whiteColor()
+        
+        label.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7)
         
         let tapRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(self.handleTapped))
         label.addGestureRecognizer(tapRecognizer)
