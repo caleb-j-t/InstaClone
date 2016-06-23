@@ -17,6 +17,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var totalLikes: UILabel!
     @IBOutlet weak var totalComments: UILabel!
     @IBOutlet weak var commentPreviews: UITextView!
+    var comment = ""
     
     override func awakeFromNib() {
         

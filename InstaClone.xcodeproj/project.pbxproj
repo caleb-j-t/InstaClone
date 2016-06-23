@@ -14,7 +14,6 @@
 		46EBD6391D1859B200361628 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46EBD6381D1859B200361628 /* Login.storyboard */; };
 		46EBD63B1D1859D700361628 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD63A1D1859D700361628 /* LoginViewController.swift */; };
 		46EBD63F1D18894800361628 /* PhotoDisplay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46EBD63E1D18894800361628 /* PhotoDisplay.storyboard */; };
-		46EBD6411D18895C00361628 /* PhotoDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD6401D18895C00361628 /* PhotoDisplayViewController.swift */; };
 		46EBD6431D18AE2B00361628 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */; };
 		46EBD6471D19943200361628 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46EBD6461D19943200361628 /* GoogleService-Info.plist */; };
 		46EBD6491D19A17600361628 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD6481D19A17600361628 /* ProfileViewController.swift */; };
@@ -25,6 +24,7 @@
 		46EBD6571D1B1CF000361628 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F881D18766C0031C5FC /* Post.swift */; };
 		46EBD6581D1B262D00361628 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967A4D31D179BF6003C5BAC /* FeedViewController.swift */; };
 		46EBD6591D1B263400361628 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97477541D184F8C001094DB /* FeedTableViewCell.swift */; };
+		46EBD65B1D1C9EAE00361628 /* PhotoDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD65A1D1C9EAE00361628 /* PhotoDisplayViewController.swift */; };
 		F9D0A22F1D14B03C000AB9E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */; };
 		F9D0A2311D14B03C000AB9E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A2301D14B03C000AB9E0 /* ViewController.swift */; };
 		F9D0A2341D14B03C000AB9E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D0A2321D14B03C000AB9E0 /* Main.storyboard */; };
@@ -40,7 +40,6 @@
 		46EBD6381D1859B200361628 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		46EBD63A1D1859D700361628 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		46EBD63E1D18894800361628 /* PhotoDisplay.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PhotoDisplay.storyboard; sourceTree = "<group>"; };
-		46EBD6401D18895C00361628 /* PhotoDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDisplayViewController.swift; sourceTree = "<group>"; };
 		46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		46EBD6461D19943200361628 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46EBD6481D19A17600361628 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		46EBD64F1D1A251C00361628 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		46EBD6531D1B045700361628 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		46EBD6551D1B054F00361628 /* CommentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
+		46EBD65A1D1C9EAE00361628 /* PhotoDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoDisplayViewController.swift; path = ../../PhotoDisplayViewController.swift; sourceTree = "<group>"; };
 		8C62700FCD6F5829A58205A1 /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A103523C9F25AB142A66E3 /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
 		F967A4D31D179BF6003C5BAC /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 				46EBD63A1D1859D700361628 /* LoginViewController.swift */,
 				46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */,
 				46EBD63E1D18894800361628 /* PhotoDisplay.storyboard */,
-				46EBD6401D18895C00361628 /* PhotoDisplayViewController.swift */,
+				46EBD65A1D1C9EAE00361628 /* PhotoDisplayViewController.swift */,
 				46EBD6531D1B045700361628 /* PostCell.swift */,
 				46EBD64F1D1A251C00361628 /* CommentsTableViewController.swift */,
 				46EBD6551D1B054F00361628 /* CommentsCell.swift */,
@@ -284,9 +284,9 @@
 				46EBD6561D1B054F00361628 /* CommentsCell.swift in Sources */,
 				46EBD6491D19A17600361628 /* ProfileViewController.swift in Sources */,
 				46EBD6431D18AE2B00361628 /* CreateAccountViewController.swift in Sources */,
-				46EBD6411D18895C00361628 /* PhotoDisplayViewController.swift in Sources */,
 				46EBD63B1D1859D700361628 /* LoginViewController.swift in Sources */,
 				F9D0A2311D14B03C000AB9E0 /* ViewController.swift in Sources */,
+				46EBD65B1D1C9EAE00361628 /* PhotoDisplayViewController.swift in Sources */,
 				F9D0A22F1D14B03C000AB9E0 /* AppDelegate.swift in Sources */,
 				46EBD6541D1B045700361628 /* PostCell.swift in Sources */,
 			);
