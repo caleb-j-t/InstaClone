@@ -24,6 +24,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var statusText: String?
     var arrayForTable: Array = [Post]()
     var contentHeight: CGFloat?
+    
+    var tappedDict: Post?
 
     var currentUser = User()
     
@@ -54,6 +56,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     newPost.postedby = post["postedby"] as? String
                     newPost.statusText = post["status"] as? String
                     newPost.imageURL = post["image"] as? String
+                    newPost.userid = post["uid"] as? String
                     if let numberOfLikes = post.valueForKey("likenumber") as? Int {
                         newPost.numberOfLikes = numberOfLikes
                     }
@@ -135,15 +138,45 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        
+//        let dictForTable = arrayForTable[section]
+//        
+//        if let postedBy = dictForTable.postedby {
+//            return postedBy
+//        } else {
+//            return ""
+//        }
+//    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let dictForTable = arrayForTable[section]
+        let dictForCell = arrayForTable[section]
         
-        if let postedBy = dictForTable.postedby {
-            return postedBy
-        } else {
-            return ""
+        let label = UILabel()
+        label.tag = section
+        label.userInteractionEnabled = true
+        
+        if let userName = dictForCell.postedby {
+            label.text = userName
         }
+        label.backgroundColor = UIColor.whiteColor()
+        
+        let tapRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(self.handleTapped))
+        label.addGestureRecognizer(tapRecognizer)
+        
+        tappedDict = dictForCell
+        
+        return label
+    }
+    
+    func handleTapped() {
+        if let tappedDict = tappedDict {
+            
+        print("label was tapped for " + tappedDict.postedby!)
+        }
+        
+        performSegueWithIdentifier("ToProfile", sender: self)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -153,5 +186,10 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return arrayForTable.count
     }
-    
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! ProfileViewController
+        
+        dvc.userID = tappedDict?.userid
+    }
 }

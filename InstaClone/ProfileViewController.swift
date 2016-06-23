@@ -22,6 +22,10 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    @IBOutlet weak var accountButton: UIButton!
+    
+    @IBOutlet weak var backButton: UIButton!
+    
     let userRef = FIRDatabase.database().reference().child("users")
 //        .child(currentUser.userID!)
     
@@ -33,12 +37,24 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewDidLoad()
         
         if userID == nil {
-            
+            if let userID = currentUser.userID {
+                loadUserData(userID)
+            }
+            accountButton.enabled = true
+            backButton.enabled = false
+            backButton.tintColor = UIColor.clearColor()
+        } else if userID == currentUser.userID {
+            accountButton.enabled = true
+            backButton.enabled = false
+            backButton.tintColor = UIColor.clearColor()
+        } else {
+            accountButton.enabled = false
+            accountButton.tintColor = UIColor.clearColor()
+            backButton.enabled = true
+            backButton.tintColor = UIColor.clearColor()
         }
         
-        if let userID = currentUser.userID {
-        loadUserData(userID)
-        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {

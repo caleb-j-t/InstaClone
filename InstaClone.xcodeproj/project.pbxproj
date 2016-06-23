@@ -24,6 +24,8 @@
 		F9B48F951D1A09020031C5FC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F941D1A09020031C5FC /* AccountViewController.swift */; };
 		F9B48F971D1A23220031C5FC /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F961D1A23220031C5FC /* ProfileCollectionViewCell.swift */; };
 		F9B48F991D1AD5090031C5FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F981D1AD5090031C5FC /* User.swift */; };
+		F9B48F9C1D1B877C0031C5FC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F9B1D1B877C0031C5FC /* SearchViewController.swift */; };
+		F9B48F9E1D1B89D90031C5FC /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F9D1D1B89D90031C5FC /* SearchCollectionViewCell.swift */; };
 		F9D0A22F1D14B03C000AB9E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */; };
 		F9D0A2311D14B03C000AB9E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A2301D14B03C000AB9E0 /* ViewController.swift */; };
 		F9D0A2341D14B03C000AB9E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D0A2321D14B03C000AB9E0 /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		F9B48F941D1A09020031C5FC /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		F9B48F961D1A23220031C5FC /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		F9B48F981D1AD5090031C5FC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F9B48F9B1D1B877C0031C5FC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F9B48F9D1D1B89D90031C5FC /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		F9D0A22B1D14B03B000AB9E0 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D0A2301D14B03C000AB9E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +119,15 @@
 			name = "Profile Files";
 			sourceTree = "<group>";
 		};
+		F9B48F9A1D1B87550031C5FC /* Search Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9B48F9B1D1B877C0031C5FC /* SearchViewController.swift */,
+				F9B48F9D1D1B89D90031C5FC /* SearchCollectionViewCell.swift */,
+			);
+			name = "Search Files";
+			sourceTree = "<group>";
+		};
 		F9D0A2221D14B03B000AB9E0 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +152,7 @@
 				F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */,
 				F9B48F881D18766C0031C5FC /* Post.swift */,
 				F9B48F981D1AD5090031C5FC /* User.swift */,
+				F9B48F9A1D1B87550031C5FC /* Search Files */,
 				F9B48F8C1D19E44A0031C5FC /* Login */,
 				F967A4CC1D173C65003C5BAC /* Feed Files */,
 				F9B48F931D1A03310031C5FC /* Profile Files */,
@@ -296,9 +310,11 @@
 				46EBD6431D18AE2B00361628 /* CreateAccountViewController.swift in Sources */,
 				46EBD6411D18895C00361628 /* PhotoDisplayViewController.swift in Sources */,
 				F9B48F951D1A09020031C5FC /* AccountViewController.swift in Sources */,
+				F9B48F9C1D1B877C0031C5FC /* SearchViewController.swift in Sources */,
 				F9B48F991D1AD5090031C5FC /* User.swift in Sources */,
 				46EBD63B1D1859D700361628 /* LoginViewController.swift in Sources */,
 				F9D0A2311D14B03C000AB9E0 /* ViewController.swift in Sources */,
+				F9B48F9E1D1B89D90031C5FC /* SearchCollectionViewCell.swift in Sources */,
 				F9D0A22F1D14B03C000AB9E0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
