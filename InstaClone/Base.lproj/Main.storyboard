@@ -869,14 +869,6 @@
             </objects>
             <point key="canvasLocation" x="-3334" y="2445"/>
         </scene>
-        <!--ProfileView-->
-        <scene sceneID="1A9-QM-CiC">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ProfileView" storyboardName="Profile" referencedIdentifier="ProfileView" id="A9i-1b-cFa" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yBW-iq-EPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1809" y="3424"/>
-        </scene>
         <!--Filter Choice2 View Controller-->
         <scene sceneID="oQw-Gj-Ldo">
             <objects>

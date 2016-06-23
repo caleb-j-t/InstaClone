@@ -24,6 +24,7 @@
 		5F0C00E41D1A24CD00784A03 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0C00E31D1A24CD00784A03 /* FilterCollectionViewCell.swift */; };
 		5F47A5BD1D1AF38B001EAFCA /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F47A5BC1D1AF38B001EAFCA /* NewPostViewController.swift */; };
 		5F635C121D1C6A6800C6A801 /* FilterChoice2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F635C111D1C6A6800C6A801 /* FilterChoice2ViewController.swift */; };
+		5FEA1A0C1D1CA44F005FE3C6 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F9D1D1B89D90031C5FC /* SearchCollectionViewCell.swift */; };
 		F9B48F8D1D19EF170031C5FC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967A4D31D179BF6003C5BAC /* FeedViewController.swift */; };
 		F9B48F8E1D19EF170031C5FC /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97477541D184F8C001094DB /* FeedTableViewCell.swift */; };
 		F9B48F921D19EF5D0031C5FC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F881D18766C0031C5FC /* Post.swift */; };
@@ -319,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FEA1A0C1D1CA44F005FE3C6 /* SearchCollectionViewCell.swift in Sources */,
 				F9B48F921D19EF5D0031C5FC /* Post.swift in Sources */,
 				5F635C121D1C6A6800C6A801 /* FilterChoice2ViewController.swift in Sources */,
 				5F0C00DE1D19FDA800784A03 /* CameraViewController.swift in Sources */,
