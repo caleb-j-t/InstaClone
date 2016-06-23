@@ -18,12 +18,12 @@
 		46EBD6431D18AE2B00361628 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */; };
 		46EBD6471D19943200361628 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46EBD6461D19943200361628 /* GoogleService-Info.plist */; };
 		46EBD6491D19A17600361628 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD6481D19A17600361628 /* ProfileViewController.swift */; };
-		46EBD64C1D19A53100361628 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46EBD64A1D19A53100361628 /* Profile.storyboard */; };
 		5F0C00DE1D19FDA800784A03 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0C00DD1D19FDA800784A03 /* CameraViewController.swift */; };
 		5F0C00E01D1A07D100784A03 /* FilterChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0C00DF1D1A07D000784A03 /* FilterChoiceViewController.swift */; };
 		5F0C00E21D1A1DF300784A03 /* FiltersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0C00E11D1A1DF300784A03 /* FiltersList.swift */; };
 		5F0C00E41D1A24CD00784A03 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0C00E31D1A24CD00784A03 /* FilterCollectionViewCell.swift */; };
 		5F47A5BD1D1AF38B001EAFCA /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F47A5BC1D1AF38B001EAFCA /* NewPostViewController.swift */; };
+		5F635C121D1C6A6800C6A801 /* FilterChoice2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F635C111D1C6A6800C6A801 /* FilterChoice2ViewController.swift */; };
 		F9B48F8D1D19EF170031C5FC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967A4D31D179BF6003C5BAC /* FeedViewController.swift */; };
 		F9B48F8E1D19EF170031C5FC /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97477541D184F8C001094DB /* FeedTableViewCell.swift */; };
 		F9B48F921D19EF5D0031C5FC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F881D18766C0031C5FC /* Post.swift */; };
@@ -31,7 +31,6 @@
 		F9B48F971D1A23220031C5FC /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F961D1A23220031C5FC /* ProfileCollectionViewCell.swift */; };
 		F9B48F991D1AD5090031C5FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F981D1AD5090031C5FC /* User.swift */; };
 		F9B48F9C1D1B877C0031C5FC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F9B1D1B877C0031C5FC /* SearchViewController.swift */; };
-		F9B48F9E1D1B89D90031C5FC /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F9D1D1B89D90031C5FC /* SearchCollectionViewCell.swift */; };
 		F9D0A22F1D14B03C000AB9E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */; };
 		F9D0A2311D14B03C000AB9E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A2301D14B03C000AB9E0 /* ViewController.swift */; };
 		F9D0A2341D14B03C000AB9E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D0A2321D14B03C000AB9E0 /* Main.storyboard */; };
@@ -51,12 +50,12 @@
 		46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		46EBD6461D19943200361628 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46EBD6481D19A17600361628 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		46EBD64B1D19A53100361628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		5F0C00DD1D19FDA800784A03 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5F0C00DF1D1A07D000784A03 /* FilterChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterChoiceViewController.swift; sourceTree = "<group>"; };
 		5F0C00E11D1A1DF300784A03 /* FiltersList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersList.swift; sourceTree = "<group>"; };
 		5F0C00E31D1A24CD00784A03 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F47A5BC1D1AF38B001EAFCA /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		5F635C111D1C6A6800C6A801 /* FilterChoice2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterChoice2ViewController.swift; sourceTree = "<group>"; };
 		8C62700FCD6F5829A58205A1 /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A103523C9F25AB142A66E3 /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
 		F967A4D31D179BF6003C5BAC /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */,
-				46EBD63A1D1859D700361628 /* LoginViewController.swift */,
 				46EBD6381D1859B200361628 /* Login.storyboard */,
 			);
 			name = Login;
@@ -124,7 +122,6 @@
 		F9B48F931D1A03310031C5FC /* Profile Files */ = {
 			isa = PBXGroup;
 			children = (
-				46EBD6481D19A17600361628 /* ProfileViewController.swift */,
 				F9B48F961D1A23220031C5FC /* ProfileCollectionViewCell.swift */,
 				F9B48F941D1A09020031C5FC /* AccountViewController.swift */,
 			);
@@ -175,9 +172,9 @@
 				5F47A5BC1D1AF38B001EAFCA /* NewPostViewController.swift */,
 				5F0C00E31D1A24CD00784A03 /* FilterCollectionViewCell.swift */,
 				5F0C00DF1D1A07D000784A03 /* FilterChoiceViewController.swift */,
+				5F635C111D1C6A6800C6A801 /* FilterChoice2ViewController.swift */,
 				5F0C00DD1D19FDA800784A03 /* CameraViewController.swift */,
 				46EBD6481D19A17600361628 /* ProfileViewController.swift */,
-				46EBD64A1D19A53100361628 /* Profile.storyboard */,
 				46EBD63E1D18894800361628 /* PhotoDisplay.storyboard */,
 				46EBD6401D18895C00361628 /* PhotoDisplayViewController.swift */,
 				F9D0A2351D14B03C000AB9E0 /* Assets.xcassets */,
@@ -323,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9B48F921D19EF5D0031C5FC /* Post.swift in Sources */,
+				5F635C121D1C6A6800C6A801 /* FilterChoice2ViewController.swift in Sources */,
 				5F0C00DE1D19FDA800784A03 /* CameraViewController.swift in Sources */,
 				F9B48F8D1D19EF170031C5FC /* FeedViewController.swift in Sources */,
 				5F47A5BD1D1AF38B001EAFCA /* NewPostViewController.swift in Sources */,

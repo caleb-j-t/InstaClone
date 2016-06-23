@@ -104,11 +104,34 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
+
+    @IBAction func photoLibraryButton(sender: UIButton) {
+        picker.sourceType = .PhotoLibrary
+        picker.allowsEditing = true
+        presentViewController(picker, animated: true, completion: nil)
+        
+//        self.tempImageView.hidden = false
+//        self.addFilterButton.hidden = false
+    }
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        print("got Image")
+        image = info[UIImagePickerControllerOriginalImage] as? UIImage;
+        dismissViewControllerAnimated(true, completion: performSegue)
+        
+    }
+    
+    func performSegue(){
+          performSegueWithIdentifier("chosenPictureSegue", sender: self)
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "chosenPictureSegue" {
+            let vc = segue.destinationViewController as! FilterChoice2ViewController
+            vc.image = self.image
+        }else{
         let vc = segue.destinationViewController as! FilterChoiceViewController
             vc.image = self.image
-        
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

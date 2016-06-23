@@ -15,14 +15,14 @@ import CoreFoundation
 
 enum Filter: Int{
     
-    case Original
-    case Sepia
-    case Mono
-    case Darken
-    case Flip
-    case BlackWhite
-    case Hipster
-    case Vignette
+    case Original = 0
+    case Sepia = 1
+    case Mono = 2
+    case Darken = 3
+    case Flip = 4
+    case BlackWhite = 5
+    case Hipster = 6
+    case Vignette = 7
     
     
     func names() -> String {

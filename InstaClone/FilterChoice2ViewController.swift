@@ -11,8 +11,8 @@ import Firebase
 import FirebaseStorage
 import FirebaseDatabase
 
-class FilterChoiceViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+class FilterChoice2ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     var image = UIImage(contentsOfFile: "")
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var filterCollection: UICollectionView!
@@ -27,9 +27,9 @@ class FilterChoiceViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            imageView.image = image
+        imageView.image = image
         self.navigationController?.navigationBarHidden = false
-
+        
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -43,33 +43,32 @@ class FilterChoiceViewController: UIViewController, UICollectionViewDelegate, UI
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("pictureCell", forIndexPath: indexPath) as? FilterCollectionViewCell
         
-      let coreImage = CIImage(image: self.image!)
+        let coreImage = CIImage(image: self.image!)
         cell!.cellImage.image = image
         
-            if let filter = Filter(rawValue: indexPath.row){
-             cell!.filterLabel.text = filter.names()
-             currentFilter = filter.filters()
-                
-                if indexPath.row > 0 {
-                self.currentFilter.setValue(coreImage, forKey: kCIInputImageKey)
-                    self.applyFilter()
-                    cell?.cellImage.image = self.filteredImage
-                    cell!.filterLabel.text = filter.names()
-                }
+        if let filter = Filter(rawValue: indexPath.row){
+            //             cell!.filterLabel.text = filter.names()
+            currentFilter = filter.filters()
             
-                return cell!
-            }else {
-                return FilterCollectionViewCell()
-//
+            if indexPath.row > 0 {
+                self.currentFilter.setValue(coreImage, forKey: kCIInputImageKey)
+                self.applyFilter()
+                cell?.cellImage.image = self.filteredImage
+                cell!.filterLabel.text = filter.names()
+            }
+            
+            return cell!
+        }else {
+            return FilterCollectionViewCell()
         }
     }
     
     func applyFilter(){
         
-            let cgimg = context.createCGImage(currentFilter.outputImage!, fromRect: currentFilter.outputImage!.extent)
-           filteredImage = UIImage(CGImage: cgimg, scale:1, orientation: UIImageOrientation .Right)
+        let cgimg = context.createCGImage(currentFilter.outputImage!, fromRect: currentFilter.outputImage!.extent)
+        filteredImage = UIImage(CGImage: cgimg, scale:1, orientation: UIImageOrientation .Up)
     }
-
+    
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let filter = Filter(rawValue: indexPath.row){
@@ -89,21 +88,21 @@ class FilterChoiceViewController: UIViewController, UICollectionViewDelegate, UI
     @IBAction func backButton(sender: AnyObject) {
         dismissViewControllerAnimated(true)  {}
     }
-
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         print("tap")
-     
+        
         let imageData = UIImageJPEGRepresentation(filteredImage, 0.4)
         self.filterImageData = imageData!
-        performSegueWithIdentifier("toNewPost", sender: self)
+        performSegueWithIdentifier("chosenNewPost", sender: self)
     }
-
+    
     
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let vc = segue.destinationViewController as! NewPostViewController
-            vc.finalImage = filteredImage
+        vc.finalImage = filteredImage
     }
     
 }

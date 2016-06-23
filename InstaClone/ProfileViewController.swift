@@ -58,7 +58,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     override func viewWillAppear(animated: Bool) {
-        profilePicture.kf_setImageWithURL((authUser?.photoURL)!, placeholderImage: nil, optionsInfo: [.ForceRefresh])
+        if let photoURL = authUser?.photoURL{
+        profilePicture.kf_setImageWithURL(photoURL, placeholderImage: nil, optionsInfo: [.ForceRefresh])
+        }
     }
     
     func loadUserData(userID: String) {
