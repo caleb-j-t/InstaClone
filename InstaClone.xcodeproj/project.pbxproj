@@ -31,7 +31,7 @@
 		F9B48F971D1A23220031C5FC /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F961D1A23220031C5FC /* ProfileCollectionViewCell.swift */; };
 		F9B48F991D1AD5090031C5FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F981D1AD5090031C5FC /* User.swift */; };
 		F9B48F9C1D1B877C0031C5FC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F9B1D1B877C0031C5FC /* SearchViewController.swift */; };
-		F9B48F9F1D1DB2410031C5FC /* PhotoDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD65A1D1C9EAE00361628 /* PhotoDisplayViewController.swift */; };
+		F9B48FA31D1DB5A70031C5FC /* PhotoDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48FA21D1DB5A70031C5FC /* PhotoDisplayViewController.swift */; };
 		F9D0A22F1D14B03C000AB9E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */; };
 		F9D0A2311D14B03C000AB9E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A2301D14B03C000AB9E0 /* ViewController.swift */; };
 		F9D0A2341D14B03C000AB9E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D0A2321D14B03C000AB9E0 /* Main.storyboard */; };
@@ -50,7 +50,6 @@
 		46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		46EBD6461D19943200361628 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46EBD6481D19A17600361628 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		46EBD65A1D1C9EAE00361628 /* PhotoDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDisplayViewController.swift; sourceTree = "<group>"; };
 		5F0C00DD1D19FDA800784A03 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5F0C00DF1D1A07D000784A03 /* FilterChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterChoiceViewController.swift; sourceTree = "<group>"; };
 		5F0C00E11D1A1DF300784A03 /* FiltersList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersList.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		F9B48F981D1AD5090031C5FC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F9B48F9B1D1B877C0031C5FC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F9B48F9D1D1B89D90031C5FC /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		F9B48FA21D1DB5A70031C5FC /* PhotoDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDisplayViewController.swift; sourceTree = "<group>"; };
 		F9D0A22B1D14B03B000AB9E0 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D0A2301D14B03C000AB9E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 				5F635C111D1C6A6800C6A801 /* FilterChoice2ViewController.swift */,
 				5F0C00DD1D19FDA800784A03 /* CameraViewController.swift */,
 				46EBD63E1D18894800361628 /* PhotoDisplay.storyboard */,
-				46EBD65A1D1C9EAE00361628 /* PhotoDisplayViewController.swift */,
+				F9B48FA21D1DB5A70031C5FC /* PhotoDisplayViewController.swift */,
 				F9D0A2351D14B03C000AB9E0 /* Assets.xcassets */,
 				F9D0A2371D14B03C000AB9E0 /* LaunchScreen.storyboard */,
 				F9D0A23A1D14B03C000AB9E0 /* Info.plist */,
@@ -321,11 +321,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9B48F9F1D1DB2410031C5FC /* PhotoDisplayViewController.swift in Sources */,
 				4623D16B1D1D87DB00A9C30D /* FilterCollectionViewCell.swift in Sources */,
 				5FEA1A0C1D1CA44F005FE3C6 /* SearchCollectionViewCell.swift in Sources */,
 				F9B48F921D19EF5D0031C5FC /* Post.swift in Sources */,
 				5F635C121D1C6A6800C6A801 /* FilterChoice2ViewController.swift in Sources */,
+				F9B48FA31D1DB5A70031C5FC /* PhotoDisplayViewController.swift in Sources */,
 				5F0C00DE1D19FDA800784A03 /* CameraViewController.swift in Sources */,
 				F9B48F8D1D19EF170031C5FC /* FeedViewController.swift in Sources */,
 				5F47A5BD1D1AF38B001EAFCA /* NewPostViewController.swift in Sources */,

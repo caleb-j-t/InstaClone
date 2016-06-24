@@ -52,15 +52,6 @@
                                     <constraint firstAttribute="width" constant="30" id="rhm-Ot-jXw"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TkV-uT-T4Y">
-                                <rect key="frame" x="8" y="539" width="516" height="53"/>
-                                <color key="backgroundColor" white="0.88467386744966447" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="svL-55-0Vw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fsa-Bj-EeD">
                                 <rect key="frame" x="0.0" y="381" width="600" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -118,7 +109,13 @@
                                                 <rect key="frame" x="20" y="7" width="133" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <segue destination="ucj-Mi-Lur" kind="unwind" unwindAction="unwindSegue:" id="QTZ-0p-dBH"/>
+                                                </connections>
                                             </button>
+                                            <connections>
+                                                <action selector="backButtonClicked:" destination="CXY-r5-wup" id="RK9-Dn-8xO"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -129,6 +126,18 @@
                                     <constraint firstAttribute="height" constant="276" id="aIn-h9-bE1"/>
                                 </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TkV-uT-T4Y">
+                                <rect key="frame" x="8" y="539" width="516" height="53"/>
+                                <color key="backgroundColor" white="0.88467386744966447" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="svL-55-0Vw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CXY-r5-wup" id="fPD-Tz-0RQ"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -172,6 +181,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Fv-gQ-UNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ucj-Mi-Lur" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="418" y="35"/>
         </scene>

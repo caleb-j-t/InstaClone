@@ -59,12 +59,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        if let photoURL = authUser?.photoURL {
-            profilePicture.kf_setImageWithURL(photoURL, placeholderImage: nil, optionsInfo: [.ForceRefresh])
-        }
-    }
-    
     func loadUserData(userID: String) {
         
         userRef.child(userID).observeEventType(.Value) { (snap: FIRDataSnapshot) in
@@ -76,7 +70,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
                 if let userData = userData {
                     self.userNameTextLabel.text = userData["screenname"] as? String
                     self.userMessage.text = userData["userquote"] as? String
-                    
+                    let photoURL = userData["profilepicture"] as? String
+                    self.profilePicture.kf_setImageWithURL(NSURL(string: photoURL!)!, placeholderImage: nil, optionsInfo: [.ForceRefresh])
                     let dictionaryOfPosts = userData["posts"] as? NSDictionary
                     if let dictionaryOfPosts = dictionaryOfPosts {
                         for (key, _) in dictionaryOfPosts {

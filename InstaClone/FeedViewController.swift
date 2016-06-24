@@ -196,6 +196,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else if segue.identifier == "ViewPhoto" {
             let dvc = segue.destinationViewController as! PhotoDisplayViewController
             
+            dvc.postToDisplay = postForComment?.key
             
         }
     }
@@ -218,6 +219,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        
+    }
     
 }

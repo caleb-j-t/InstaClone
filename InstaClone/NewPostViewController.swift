@@ -33,6 +33,14 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         imageView.image = finalImage
         finalData = UIImageJPEGRepresentation(finalImage!, 0.5)!
+        
+        let userRef = FIRDatabase.database().reference().child("users").child((FIRAuth.auth()?.currentUser?.uid)!)
+
+        
+        userRef.observeSingleEventOfType(.Value) { (snap: FIRDataSnapshot) in
+            let userInfo = snap.value as? NSDictionary
+            self.displayName = (userInfo!["screenname"] as? String)!
+        }
     }
     
     @IBAction func postButtonPressed(sender: AnyObject) {
@@ -46,9 +54,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
     }
     
     func addPost(){
-        if let aDisplayName = FIRAuth.auth()!.currentUser!.displayName{
-            displayName = aDisplayName
-        }
+        
 
         let key = rootRefDB.child("posts").childByAutoId().key
         let post = ["uid": "\(userID)",
