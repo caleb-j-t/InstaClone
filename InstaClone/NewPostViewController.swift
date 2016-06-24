@@ -13,13 +13,13 @@ import FirebaseDatabase
 
 class NewPostViewController: UIViewController, UITextViewDelegate {
     var finalImage = UIImage(contentsOfFile: "")
-    let user = FIRAuth.auth()?.currentUser
+    let user = FIRAuth.auth()!.currentUser
     let userID = FIRAuth.auth()!.currentUser!.uid
     let email = FIRAuth.auth()?.currentUser?.email
     let rootRefDB = FIRDatabase.database().reference()
     let rootRefStorage = FIRStorage.storage().reference()
     var photourl = ""
-    let dummyName = "Mike"
+    var displayName = ""
     var finalData = NSData()
     var statusUpdate = "asdfjlasdfsalkj"
     
@@ -37,12 +37,21 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
     @IBAction func postButtonPressed(sender: AnyObject) {
         saveToTheInterweb()
         statusTextView.text = "Enter a status"
+        let imageData = UIImageJPEGRepresentation(imageView.image!, 0.5)
+        let compressedImage = UIImage(data: imageData!)
+        UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+        dismissViewControllerAnimated(true) {
+        }
     }
     
     func addPost(){
+        if let aDisplayName = FIRAuth.auth()!.currentUser!.displayName{
+            displayName = aDisplayName
+        }
+
         let key = rootRefDB.child("posts").childByAutoId().key
         let post = ["uid": "\(userID)",
-                    "postedby": "\(dummyName)",
+                    "postedby": "\(displayName)",
                     "image": "\(photourl)",
                     "status": "\(statusUpdate)"]
         

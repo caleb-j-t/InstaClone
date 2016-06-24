@@ -93,7 +93,7 @@ class FilterChoiceViewController: UIViewController, UICollectionViewDelegate, UI
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         print("tap")
      
-        let imageData = UIImageJPEGRepresentation(filteredImage, 0.4)
+        let imageData = UIImageJPEGRepresentation(filteredImage, 0.5)
         self.filterImageData = imageData!
         performSegueWithIdentifier("toNewPost", sender: self)
     }

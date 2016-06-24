@@ -1,28 +1,9 @@
-////
-////  SearchViewController.swift
-////  InstaClone
-////
-////  Created by Caleb Talbot on 6/22/16.
-////  Copyright © 2016 Caleb Talbot. All rights reserved.
-////
 //
-//import UIKit
-//import FirebaseDatabase
-//import FirebaseStorage
-//import Kingfisher
+//  SearchViewController.swift
+//  InstaClone
 //
-//class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
-//    
-//    @IBOutlet weak var searchBar: UISearchBar!
-//    
-//    var arrayFromSearch: Array = [Post]()
-//    var arrayForResults: Array = [Post]()
-//    let postRef = FIRDatabase.database().reference().child("posts")
-//    
-//    @IBOutlet weak var collectionView: UICollectionView!
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
+//  Created by Caleb Talbot on 6/22/16.
+//  Copyright © 2016 Caleb Talbot. All rights reserved.
 //
 
 import UIKit

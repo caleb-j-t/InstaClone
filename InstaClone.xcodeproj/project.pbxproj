@@ -18,7 +18,6 @@
 		46EBD6431D18AE2B00361628 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */; };
 		46EBD6471D19943200361628 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46EBD6461D19943200361628 /* GoogleService-Info.plist */; };
 		46EBD6491D19A17600361628 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD6481D19A17600361628 /* ProfileViewController.swift */; };
-		46EBD65B1D1C9EAE00361628 /* PhotoDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD65A1D1C9EAE00361628 /* PhotoDisplayViewController.swift */; };
 		5F0C00DE1D19FDA800784A03 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0C00DD1D19FDA800784A03 /* CameraViewController.swift */; };
 		5F0C00E01D1A07D100784A03 /* FilterChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0C00DF1D1A07D000784A03 /* FilterChoiceViewController.swift */; };
 		5F0C00E21D1A1DF300784A03 /* FiltersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0C00E11D1A1DF300784A03 /* FiltersList.swift */; };
@@ -50,7 +49,7 @@
 		46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		46EBD6461D19943200361628 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46EBD6481D19A17600361628 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		46EBD65A1D1C9EAE00361628 /* PhotoDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoDisplayViewController.swift; path = ../../PhotoDisplayViewController.swift; sourceTree = "<group>"; };
+		46EBD65A1D1C9EAE00361628 /* PhotoDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDisplayViewController.swift; sourceTree = "<group>"; };
 		5F0C00DD1D19FDA800784A03 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5F0C00DF1D1A07D000784A03 /* FilterChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterChoiceViewController.swift; sourceTree = "<group>"; };
 		5F0C00E11D1A1DF300784A03 /* FiltersList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersList.swift; sourceTree = "<group>"; };
@@ -230,7 +229,7 @@
 				TargetAttributes = {
 					F9D0A22A1D14B03B000AB9E0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = EQ39KCD6SJ;
+						DevelopmentTeam = ZQHPN9T2ZP;
 					};
 				};
 			};
@@ -333,7 +332,6 @@
 				46EBD6491D19A17600361628 /* ProfileViewController.swift in Sources */,
 				46EBD6431D18AE2B00361628 /* CreateAccountViewController.swift in Sources */,
 				5F0C00E01D1A07D100784A03 /* FilterChoiceViewController.swift in Sources */,
-				46EBD65B1D1C9EAE00361628 /* PhotoDisplayViewController.swift in Sources */,
 				F9B48F951D1A09020031C5FC /* AccountViewController.swift in Sources */,
 				F9B48F9C1D1B877C0031C5FC /* SearchViewController.swift in Sources */,
 				F9B48F991D1AD5090031C5FC /* User.swift in Sources */,
