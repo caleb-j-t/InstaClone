@@ -27,8 +27,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var contentHeight: CGFloat?
     
     var tappedDict: Post?
-
-    var currentUser = User()
     
     var tableScrollPosition: CGFloat = CGFloat()
     
@@ -36,10 +34,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        print(currentUser.userID)
-        print(currentUser.userQuote)
         
         tabBarController?.delegate = self
         
@@ -85,7 +79,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         postRef.child(dictForCell.key!).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
             if var post = currentData.value as? [String : AnyObject], let uid = dictForCell.postedby
-                //                FIRAuth.auth()?.currentUser?.uid
             {
                 var likes : Dictionary<String, Bool>
                 likes = post["likedby"] as? [String : Bool] ?? [:]

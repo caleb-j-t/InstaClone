@@ -12,8 +12,6 @@ import FirebaseDatabase
 import FirebaseAuth
 
 var authUser: FIRUser?
-var currentUser = User()
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,23 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         authUser = FIRAuth.auth()?.currentUser
         
         let userRef = FIRDatabase.database().reference().child("users")
-        
-        if let user = authUser {
-            currentUser.authUserObject = user
-            currentUser.displayName = user.displayName
-            currentUser.userID = user.uid
-            
-            currentUser.urlForProfilePic = user.photoURL
-            if let uid = currentUser.userID {
-                userRef.child(uid).child("userquote").observeSingleEventOfType(.Value, withBlock: { (snap:FIRDataSnapshot) in
-                    if let quote = snap.value as? String {
-                        currentUser.userQuote = quote
-                        print(quote)
-
-                    }
-                })
-            }
-        }
         
         return true
         

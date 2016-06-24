@@ -27,7 +27,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var backButton: UIButton!
     
     let userRef = FIRDatabase.database().reference().child("users")
-    //        .child(currentUser.userID!)
     
     var userID: String?
     
@@ -36,14 +35,16 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let currentUser = FIRAuth.auth()?.currentUser?.uid
+        
         if userID == nil {
-            if let userID = currentUser.userID {
+            if let userID = currentUser {
                 loadUserData(userID)
             }
             accountButton.enabled = true
             backButton.enabled = false
             backButton.tintColor = UIColor.clearColor()
-        } else if userID == currentUser.userID {
+        } else if userID == currentUser {
             accountButton.enabled = true
             backButton.enabled = true
         } else {
