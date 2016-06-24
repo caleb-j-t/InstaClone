@@ -124,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				F9B48F961D1A23220031C5FC /* ProfileCollectionViewCell.swift */,
+				46EBD6481D19A17600361628 /* ProfileViewController.swift */,
 				F9B48F941D1A09020031C5FC /* AccountViewController.swift */,
 			);
 			name = "Profile Files";
@@ -175,7 +176,6 @@
 				5F0C00DF1D1A07D000784A03 /* FilterChoiceViewController.swift */,
 				5F635C111D1C6A6800C6A801 /* FilterChoice2ViewController.swift */,
 				5F0C00DD1D19FDA800784A03 /* CameraViewController.swift */,
-				46EBD6481D19A17600361628 /* ProfileViewController.swift */,
 				46EBD63E1D18894800361628 /* PhotoDisplay.storyboard */,
 				46EBD6401D18895C00361628 /* PhotoDisplayViewController.swift */,
 				F9D0A2351D14B03C000AB9E0 /* Assets.xcassets */,

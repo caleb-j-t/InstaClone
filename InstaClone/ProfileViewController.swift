@@ -45,11 +45,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             backButton.tintColor = UIColor.clearColor()
         } else if userID == currentUser.userID {
             accountButton.enabled = true
-            backButton.enabled = false
-            backButton.tintColor = UIColor.clearColor()
+            backButton.enabled = true
         } else {
             accountButton.enabled = false
+            accountButton.tintColor = UIColor.clearColor()
             backButton.enabled = true
+            if let userID = userID {
+                loadUserData(userID)
+            }
         }
         
         
