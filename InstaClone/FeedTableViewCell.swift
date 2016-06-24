@@ -21,6 +21,7 @@ class FeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var likeButton: UIButton!
     
+    @IBOutlet weak var commentButton: UIButton!
     
     
     

@@ -135,6 +135,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.likeButton.tag = indexPath.section
         cell.likeButton.addTarget(self, action: #selector(FeedViewController.likeButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
+     //   cell.commentButton.tag = indexPath.section
+     //   cell.commentButton.addTarget(self, action: #selector(), forControlEvents: UIControlEvents.TouchUpInside)
+        
         return cell
     }
     
