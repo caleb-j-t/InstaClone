@@ -230,7 +230,7 @@
                             <constraint firstItem="VY6-xg-bmu" firstAttribute="top" secondItem="mbP-jd-CVz" secondAttribute="bottom" id="wuB-xI-Fd9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="2Qb-aI-0vv"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="feed" selectedImage="feed" id="2Qb-aI-0vv"/>
                     <connections>
                         <outlet property="tableView" destination="mbP-jd-CVz" id="I8P-QT-mZr"/>
                         <segue destination="Sgb-y6-EoR" kind="show" identifier="ToProfile" id="hyS-Fq-FMW"/>
@@ -369,7 +369,7 @@
                             <constraint firstItem="3sC-EJ-qXf" firstAttribute="top" secondItem="Ylx-Kc-mUO" secondAttribute="bottom" constant="13" id="yvG-qK-6bf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="SsY-uY-c4Q"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="user" selectedImage="user" id="SsY-uY-c4Q"/>
                     <connections>
                         <outlet property="accountButton" destination="pPq-Wz-YuX" id="xWY-lf-gVM"/>
                         <outlet property="backButton" destination="AOv-fp-A5B" id="ZiT-M2-KYi"/>
@@ -486,7 +486,7 @@
                             <constraint firstAttribute="trailing" secondItem="CCX-Vc-xR7" secondAttribute="trailing" id="w8E-dU-9nM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" id="cJu-nh-61b"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search" selectedImage="search" id="cJu-nh-61b"/>
                     <connections>
                         <outlet property="collectionView" destination="aUp-r8-OuI" id="Z3a-M7-Pcf"/>
                         <outlet property="searchBar" destination="CCX-Vc-xR7" id="jm0-bF-1h4"/>
@@ -691,7 +691,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" id="Caw-LA-BSZ"/>
+                    <tabBarItem key="tabBarItem" title="Camera" image="camera" selectedImage="camera" id="Caw-LA-BSZ"/>
                     <connections>
                         <outlet property="addFilterButton" destination="Qqj-FA-Ddb" id="fsn-bz-8ro"/>
                         <outlet property="cameraView" destination="zdH-Zm-5qr" id="T6D-jJ-4Mg"/>
@@ -970,10 +970,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="32" height="32"/>
+        <image name="feed" width="32" height="32"/>
         <image name="firefly_0" width="1280" height="720"/>
+        <image name="search" width="32" height="32"/>
+        <image name="user" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hyS-Fq-FMW"/>
         <segue reference="luY-a3-crs"/>
+        <segue reference="hyS-Fq-FMW"/>
     </inferredMetricsTieBreakers>
 </document>
