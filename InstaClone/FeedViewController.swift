@@ -12,6 +12,7 @@ import FirebaseDatabase
 import FirebaseStorage
 import FirebaseAuth
 import Kingfisher
+import FBSDKCoreKit
 
 class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate {
     
@@ -182,4 +183,24 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         dvc.userID = tappedDict?.userid
     }
+    
+    @IBAction func onLogOutTapped(sender: AnyObject) {
+        
+        try! FIRAuth.auth()!.signOut()
+        
+        // Facebook log out by setting access token to nil, then sending back to the initial viewcontroller.
+        
+        FBSDKAccessToken.setCurrentAccessToken(nil)
+        
+        try! FIRAuth.auth()!.signOut()
+        print("signed out")
+        
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        let ViewController: UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("LoginView")
+        
+        self.presentViewController(ViewController, animated: true, completion: nil)
+        
+    }
+    
+    
 }

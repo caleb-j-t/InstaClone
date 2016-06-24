@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var backButton: UIButton!
     
     let userRef = FIRDatabase.database().reference().child("users")
-//        .child(currentUser.userID!)
+    //        .child(currentUser.userID!)
     
     var userID: String?
     
@@ -57,8 +57,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewWillAppear(animated: Bool) {
         if let photoURL = authUser?.photoURL {
-        profilePicture.kf_setImageWithURL(photoURL, placeholderImage: nil, optionsInfo: [.ForceRefresh])
-        } 
+            profilePicture.kf_setImageWithURL(photoURL, placeholderImage: nil, optionsInfo: [.ForceRefresh])
+        }
     }
     
     func loadUserData(userID: String) {
@@ -68,29 +68,23 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             self.arrayForURLs = []
             
             if snap.value != nil {
-            let userData = snap.value as! NSDictionary
-            
-            self.userNameTextLabel.text = userData["screenname"] as? String
-            self.userMessage.text = userData["userquote"] as? String
-        
-            let dictionaryOfPosts = userData["posts"] as? NSDictionary
-            if let dictionaryOfPosts = dictionaryOfPosts {
-            for (key, _) in dictionaryOfPosts {
-                if let post = dictionaryOfPosts["\(key)"] as? NSDictionary {
-                    self.arrayForURLs.append((post["image"] as? String)!)
+                let userData = snap.value as? NSDictionary
+                if let userData = userData {
+                    self.userNameTextLabel.text = userData["screenname"] as? String
+                    self.userMessage.text = userData["userquote"] as? String
+                    
+                    let dictionaryOfPosts = userData["posts"] as? NSDictionary
+                    if let dictionaryOfPosts = dictionaryOfPosts {
+                        for (key, _) in dictionaryOfPosts {
+                            if let post = dictionaryOfPosts["\(key)"] as? NSDictionary {
+                                self.arrayForURLs.append((post["image"] as? String)!)
+                            }
+                        }
+                    }
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.collectionView.reloadData()
+                    })
                 }
-            }
-            }
-            dispatch_async(dispatch_get_main_queue(), { 
-                self.collectionView.reloadData()
-            })
-            } else {
-                let alertController = UIAlertController(title: "Set up a profile", message: "It looks like you don't have a profile yet. Click below to create a profile and upload a profile photo.", preferredStyle: UIAlertControllerStyle.Alert)
-                let createProfileButton = UIAlertAction(title: "Create a Profile", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
-                    self.performSegueWithIdentifier("ToAccount", sender: self)
-                })
-                alertController.addAction(createProfileButton)
-                self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
     }
@@ -98,7 +92,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBAction func onBackButtonTapped(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CellID", forIndexPath: indexPath) as! ProfileCollectionViewCell
         
@@ -108,11 +102,11 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         return cell
     }
-   
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
+        
         print("number of items in array: \(arrayForURLs.count)")
-
+        
         return arrayForURLs.count
     }
     
