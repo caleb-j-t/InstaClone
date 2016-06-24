@@ -8,14 +8,16 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 import FirebaseDatabase
 
 
 class PhotoDisplayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let postRef = FIRDatabase.database().reference().child("posts").child("post2").child("comments")
     var postDict = NSDictionary()
-    var user = FIRAuth.auth()
+    var user = FIRAuth.auth()?.currentUser
     var arrayOfThings = [String]()
+    
     
     @IBOutlet weak var tableView: UITableView!
     

@@ -27,6 +27,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var contentHeight: CGFloat?
     var offsetAfterDismiss: CGFloat?
     
+    var postForComment: Post?
     var tappedDict: Post?
     
     var tableScrollPosition: CGFloat = CGFloat()
@@ -114,6 +115,12 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    func commentButtonClicked(sender: UIButton) {
+        postForComment = arrayForTable[sender.tag]
+        
+        performSegueWithIdentifier("ViewPhoto", sender: self)
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PostCell", forIndexPath: indexPath) as! FeedTableViewCell
         
@@ -134,6 +141,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         cell.likeButton.tag = indexPath.section
         cell.likeButton.addTarget(self, action: #selector(FeedViewController.likeButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        cell.commentButton.tag = indexPath.section
+        cell.commentButton.addTarget(self, action: #selector(FeedViewController.commentButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         return cell
     }
@@ -179,9 +189,15 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ToProfile" {
         let dvc = segue.destinationViewController as! ProfileViewController
         
-        dvc.userID = tappedDict?.userid
+            dvc.userID = tappedDict?.userid
+        } else if segue.identifier == "ViewPhoto" {
+            let dvc = segue.destinationViewController as! PhotoDisplayViewController
+            
+            
+        }
     }
     
     @IBAction func onLogOutTapped(sender: AnyObject) {

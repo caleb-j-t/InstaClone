@@ -31,6 +31,7 @@
 		F9B48F971D1A23220031C5FC /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F961D1A23220031C5FC /* ProfileCollectionViewCell.swift */; };
 		F9B48F991D1AD5090031C5FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F981D1AD5090031C5FC /* User.swift */; };
 		F9B48F9C1D1B877C0031C5FC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F9B1D1B877C0031C5FC /* SearchViewController.swift */; };
+		F9B48F9F1D1DB2410031C5FC /* PhotoDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD65A1D1C9EAE00361628 /* PhotoDisplayViewController.swift */; };
 		F9D0A22F1D14B03C000AB9E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A22E1D14B03C000AB9E0 /* AppDelegate.swift */; };
 		F9D0A2311D14B03C000AB9E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0A2301D14B03C000AB9E0 /* ViewController.swift */; };
 		F9D0A2341D14B03C000AB9E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D0A2321D14B03C000AB9E0 /* Main.storyboard */; };
@@ -320,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B48F9F1D1DB2410031C5FC /* PhotoDisplayViewController.swift in Sources */,
 				4623D16B1D1D87DB00A9C30D /* FilterCollectionViewCell.swift in Sources */,
 				5FEA1A0C1D1CA44F005FE3C6 /* SearchCollectionViewCell.swift in Sources */,
 				F9B48F921D19EF5D0031C5FC /* Post.swift in Sources */,

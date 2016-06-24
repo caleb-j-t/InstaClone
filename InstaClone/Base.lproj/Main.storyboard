@@ -56,7 +56,7 @@
             </objects>
             <point key="canvasLocation" x="-1104" y="3273"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--Home-->
         <scene sceneID="THj-KW-GoE">
             <objects>
                 <viewController storyboardIdentifier="FeedViewController" id="F40-9Z-WU1" customClass="FeedViewController" customModule="InstaClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -169,6 +169,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cellImageView" destination="h6T-jb-EiS" id="I1D-hj-cPf"/>
+                                            <outlet property="commentButton" destination="izM-Zv-L54" id="hAz-L9-BRs"/>
                                             <outlet property="commentsTextLabel" destination="7bH-M3-Y9G" id="CQ0-ZR-YDy"/>
                                             <outlet property="likeButton" destination="FIQ-lV-ldp" id="thf-mT-lbE"/>
                                             <outlet property="likesTextLabel" destination="j6N-pw-ztv" id="kGi-2q-JOw"/>
@@ -214,13 +215,24 @@
                     <connections>
                         <outlet property="tableView" destination="mbP-jd-CVz" id="I8P-QT-mZr"/>
                         <segue destination="Sgb-y6-EoR" kind="show" identifier="ToProfile" id="hyS-Fq-FMW"/>
+                        <segue destination="HN0-gU-0S3" kind="presentation" identifier="ViewPhoto" id="NSS-p2-fxr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bez-gT-bXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2644" y="1248"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--PhotoDisplay-->
+        <scene sceneID="bxP-RW-Nnf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PhotoDisplay" id="ugi-kj-abu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bQs-v8-4vE"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fjc-90-Ogm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2577.5" y="1925"/>
+        </scene>
+        <!--Profile-->
         <scene sceneID="wLs-R6-WTK">
             <objects>
                 <viewController id="Sgb-y6-EoR" customClass="ProfileViewController" customModule="InstaClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -388,7 +400,7 @@
             </objects>
             <point key="canvasLocation" x="-1112" y="481"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Search-->
         <scene sceneID="F5O-YY-erI">
             <objects>
                 <viewController id="0gi-jP-zgI" customClass="SearchViewController" customModule="InstaClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -467,9 +479,7 @@
                             <constraint firstAttribute="trailing" secondItem="CCX-Vc-xR7" secondAttribute="trailing" id="w8E-dU-9nM"/>
                         </constraints>
                     </view>
-
                     <tabBarItem key="tabBarItem" title="Search" image="search" selectedImage="search" id="cJu-nh-61b"/>
-
                     <connections>
                         <outlet property="collectionView" destination="aUp-r8-OuI" id="Z3a-M7-Pcf"/>
                         <outlet property="searchBar" destination="CCX-Vc-xR7" id="jm0-bF-1h4"/>
@@ -477,7 +487,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3s-jY-Pef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-361" y="2049"/>
+            <point key="canvasLocation" x="451" y="2049"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="hL1-UD-TD3">
@@ -951,10 +961,28 @@
             </objects>
             <point key="canvasLocation" x="-3328" y="3196"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YaD-it-t2I">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HN0-gU-0S3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0FI-A6-Ze5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ugi-kj-abu" kind="relationship" relationship="rootViewController" id="4El-hA-ncW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PvK-7g-XTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3065" y="2030"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="daff35_94ba58407fd14cbfb3a0394ff34127be.png_256" width="256" height="256"/>
         <image name="camera" width="32" height="32"/>
+        <image name="daff35_94ba58407fd14cbfb3a0394ff34127be.png_256" width="256" height="256"/>
         <image name="feed" width="32" height="32"/>
         <image name="firefly_0" width="1280" height="720"/>
         <image name="search" width="32" height="32"/>
