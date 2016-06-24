@@ -17,7 +17,7 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     let storageRef = FIRStorage.storage().reference()
     let postRef = FIRDatabase.database().reference().child("users")
-    let userRef = FIRDatabase.database().reference().child("users").child(currentUser.userID!)
+    let userRef = FIRDatabase.database().reference().child("users")
 
     
     var downloadURL: String?
@@ -91,9 +91,12 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
             currentUser.displayName = screennameTextField.text
             currentUser.userQuote = userQuoteTextView.text
 
+            let userID = FIRAuth.auth()?.currentUser?.uid
+            if let userID = userID {
+                userRef.child(userID) .child("screenname").setValue(screennameTextField.text)
+                userRef.child("userquote").setValue(userQuoteTextView.text)
+            }
             
-            userRef.child("screenname").setValue(screennameTextField.text)
-            userRef.child("userquote").setValue(userQuoteTextView.text)
          
             screennameTextField.hidden = true
             selectPictureButton.hidden = true
