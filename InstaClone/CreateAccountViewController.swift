@@ -39,9 +39,9 @@ class CreateAccountViewController: UIViewController {
                 
                 
                 if let userID = currentUserUID {
-                        self.usersRef.child(userID).child("profilepicture").setValue("")
+                        self.usersRef.child(userID).child("profilepicture").setValue("https://firebasestorage.googleapis.com/v0/b/fauxstagram.appspot.com/o/daff35_94ba58407fd14cbfb3a0394ff34127be.png_256.png?alt=media&token=10480fef-d3bd-43a1-9f15-24ba577a9f3e")
                         self.usersRef.child(userID).child("screenname").setValue(self.usernameField.text)
-                        self.usersRef.child(userID).child("userquote").setValue("")
+                        self.usersRef.child(userID).child("userquote").setValue("Enter a message to display on your profile by clicking on the account button.")
                 }
                 
                 let loginStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

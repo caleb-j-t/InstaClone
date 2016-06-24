@@ -16,8 +16,7 @@ import FBSDKCoreKit
 class AccountViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     let storageRef = FIRStorage.storage().reference()
-    let postRef = FIRDatabase.database().reference().child("users")
-    let userRef = FIRDatabase.database().reference().child("users").child(currentUser.userID!)
+    var userRef: FIRDatabaseReference?
 
     
     var downloadURL: String?
@@ -33,29 +32,45 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var profilePictureImageView: UIImageView!
     
+    var loggedInUser: FIRUser?
+    
+    var data: NSDictionary?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loggedInUser = FIRAuth.auth()?.currentUser
         
         screennameTextField.delegate = self
         
         selectPictureButton.hidden = true
         
-            if let displayName = currentUser.displayName {
+        if let loggedInUser = loggedInUser {
+            if let displayName = loggedInUser.displayName {
             usernameTextLabel.text = displayName
             } else {
                 usernameTextLabel.text = "Click the \"Edit Profile\" button to get started."
             }
          
+            userRef = FIRDatabase.database().reference().child("users").child(loggedInUser.uid)
         
-        if let quote = currentUser.userQuote {
-            userQuoteTextView.text = quote
+            userRef!.observeSingleEventOfType(.Value, withBlock: { (snap: FIRDataSnapshot) in
+                self.data = snap.value as? NSDictionary
+                if let data = self.data {
+                    let quote = data["userquote"] as? String
+                    if let quote = quote {
+                        self.userQuoteTextView.text = quote
+                    }
+                    
+                    let photoURL = data["profilepicture"] as? String
+                    if let photoURL = photoURL {
+                        self.profilePictureImageView.kf_setImageWithURL(NSURL(string: photoURL)!, placeholderImage: nil, optionsInfo: [.ForceRefresh])
+                    }
+                }
+            })
+           
         }
-        
-        if let photoURL = authUser?.photoURL {
-        profilePictureImageView.kf_setImageWithURL(photoURL, placeholderImage: nil, optionsInfo: [.ForceRefresh])
-        }
-        
     }
 
 
@@ -69,40 +84,29 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
             usernameTextLabel.hidden = true
             selectPictureButton.hidden = false
             
-            screennameTextField.text = currentUser.displayName
+            if let data = data {
+            screennameTextField.text = data["screenname"] as? String
+            }
             
             userQuoteTextView.editable = true
             
         } else {
             sender.setTitle("Edit Profile", forState: UIControlState.Normal)
-            
-            let changeRequest = currentUser.authUserObject!.profileChangeRequest()
-            
-            changeRequest.displayName = screennameTextField.text
-            
-            changeRequest.commitChangesWithCompletion { error in
-                if let error = error {
-                    print("Error during profile changeRequest: \(error)")
-                } else {
-                    print("Profile Updated")
-                }
-            }
-            
-            currentUser.displayName = screennameTextField.text
-            currentUser.userQuote = userQuoteTextView.text
 
-            
-            userRef.child("screenname").setValue(screennameTextField.text)
-            userRef.child("userquote").setValue(userQuoteTextView.text)
+            if let userRef = userRef {
+                userRef.child("screenname").setValue(screennameTextField.text)
+                userRef.child("userquote").setValue(userQuoteTextView.text)
          
             screennameTextField.hidden = true
             selectPictureButton.hidden = true
             usernameTextLabel.hidden = false
-            usernameTextLabel.text = currentUser.displayName
-            
+                if let data = data {
+            usernameTextLabel.text = data["screenname"] as? String
+                }
             userQuoteTextView.editable = false
         }
         
+    }
     }
     
     
@@ -114,7 +118,7 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     @IBAction func onProfilePickerTapped(sender: AnyObject) {
-        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
+        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary)) {
             let picker = UIImagePickerController()
             picker.delegate = self
             picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -144,7 +148,7 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func saveImage(image: UIImage) {
         let data: NSData = UIImageJPEGRepresentation(image, 0.3)!
-        let uploadRef = storageRef.child("\(currentUser.userID) + profileimages")
+        let uploadRef = storageRef.child("\(loggedInUser?.uid) + profileimages")
         uploadRef.putData(data, metadata: nil) { (metadata: FIRStorageMetadata?, error: NSError?) in
             
             if error != nil {
@@ -154,21 +158,11 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
                 print(self.downloadURL!)
             }
             
-            let changeRequest = currentUser.authUserObject!.profileChangeRequest()
-            
             
             if let downloadURL = self.downloadURL {
-                changeRequest.photoURL = NSURL(string: downloadURL)
-                self.postRef.child(currentUser.userID!).child("profilepicture").setValue(downloadURL)
+                self.userRef!.child("profilepicture").setValue(downloadURL)
             }
             
-            changeRequest.commitChangesWithCompletion { error in
-                if let error = error {
-                    print("Error during profile changeRequest: \(error)")
-                } else {
-                    print("Profile Updated")
-                }
-            }
         }
     }
     
