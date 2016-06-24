@@ -40,6 +40,8 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
         let imageData = UIImageJPEGRepresentation(imageView.image!, 0.5)
         let compressedImage = UIImage(data: imageData!)
         UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+        dismissViewControllerAnimated(true) {
+        }
     }
     
     func addPost(){

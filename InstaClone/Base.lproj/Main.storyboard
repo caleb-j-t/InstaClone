@@ -721,7 +721,7 @@
                                     <constraint firstAttribute="width" constant="353" id="aie-LU-vzw"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter a status" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PiY-o0-Izp">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter a status" translatesAutoresizingMaskIntoConstraints="NO" id="PiY-o0-Izp">
                                 <rect key="frame" x="76" y="55" width="298" height="82"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="298" id="gzb-aV-Sv0"/>
