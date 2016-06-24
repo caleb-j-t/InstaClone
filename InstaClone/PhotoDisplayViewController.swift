@@ -7,37 +7,53 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
-class PhotoDisplayViewController: UITableViewController {
 
-  //  @IBOutlet var tableView: UITableView!
-
+class PhotoDisplayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    let postRef = FIRDatabase.database().reference().child("posts").child("post2").child("comments")
+    var postDict = NSDictionary()
+    var user = FIRAuth.auth()
+    var arrayOfThings = [String]()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //
+        postRef.observeEventType(.Value) { (snap: FIRDataSnapshot) in
 
-        // We set the table view header.
-//        let cellTableViewHeader = tableView.dequeueReusableCellWithIdentifier(TableViewController.tableViewHeaderCustomCellIdentifier) as! UITableViewCell
-//        cellTableViewHeader.frame = CGRectMake(0, 0, self.tableView.bounds.width, self.heightCache[TableViewController.tableViewHeaderCustomCellIdentifier]!)
-//        self.tableView.tableHeaderView = cellTableViewHeader
-//        
-//        // We set the table view footer, just know that it will also remove extra cells from tableview.
-//        let cellTableViewFooter = tableView.dequeueReusableCellWithIdentifier(TableViewController.tableViewFooterCustomCellIdentifier) as! UITableViewCell
-//        cellTableViewFooter.frame = CGRectMake(0, 0, self.tableView.bounds.width, self.heightCache[TableViewController.tableViewFooterCustomCellIdentifier]!)
-//        self.tableView.tableFooterView = cellTableViewFooter
-//    
+//            for post in snap.children{
+            self.postDict = snap.value as! NSDictionary
+            for (key, _) in self.postDict {
+                let comment = self.postDict["\(key)"] as? String
+                if let comment = comment {
+                self.arrayOfThings.append(comment)
+                }
+                self.tableView.reloadData()
+            }
+//            self.arrayOfThings.append(self.postDict)
+            
+//            }
+            print("********")
+            print(self.postDict)
+            print("&&&&&&&&&")
+            print(self.arrayOfThings)
+        }
+    
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayOfThings.count    //arrayOfThings.count
     }
 
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellID")
+        
+        let commentForCell = arrayOfThings[indexPath.row] 
+        
+        cell?.textLabel?.text = commentForCell
+        return cell!
     }
-    */
-
 }

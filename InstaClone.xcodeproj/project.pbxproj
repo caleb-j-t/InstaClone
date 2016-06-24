@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		134446788D9ABBDAB212652E /* Pods_InstaClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C62700FCD6F5829A58205A1 /* Pods_InstaClone.framework */; };
+		4623D16B1D1D87DB00A9C30D /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0C00E31D1A24CD00784A03 /* FilterCollectionViewCell.swift */; };
 		46EBD60B1D18420D00361628 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EBD6081D18420D00361628 /* FBSDKCoreKit.framework */; };
 		46EBD60C1D18420D00361628 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EBD6091D18420D00361628 /* FBSDKLoginKit.framework */; };
 		46EBD60D1D18420D00361628 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EBD60A1D18420D00361628 /* FBSDKShareKit.framework */; };
 		46EBD6391D1859B200361628 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46EBD6381D1859B200361628 /* Login.storyboard */; };
 		46EBD63B1D1859D700361628 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD63A1D1859D700361628 /* LoginViewController.swift */; };
 		46EBD63F1D18894800361628 /* PhotoDisplay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46EBD63E1D18894800361628 /* PhotoDisplay.storyboard */; };
-		46EBD6411D18895C00361628 /* PhotoDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD6401D18895C00361628 /* PhotoDisplayViewController.swift */; };
 		46EBD6431D18AE2B00361628 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */; };
 		46EBD6471D19943200361628 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46EBD6461D19943200361628 /* GoogleService-Info.plist */; };
 		46EBD6491D19A17600361628 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD6481D19A17600361628 /* ProfileViewController.swift */; };
+		46EBD65B1D1C9EAE00361628 /* PhotoDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EBD65A1D1C9EAE00361628 /* PhotoDisplayViewController.swift */; };
 		5F0C00DE1D19FDA800784A03 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0C00DD1D19FDA800784A03 /* CameraViewController.swift */; };
 		5F0C00E01D1A07D100784A03 /* FilterChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0C00DF1D1A07D000784A03 /* FilterChoiceViewController.swift */; };
 		5F0C00E21D1A1DF300784A03 /* FiltersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0C00E11D1A1DF300784A03 /* FiltersList.swift */; };
-		5F0C00E41D1A24CD00784A03 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0C00E31D1A24CD00784A03 /* FilterCollectionViewCell.swift */; };
 		5F47A5BD1D1AF38B001EAFCA /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F47A5BC1D1AF38B001EAFCA /* NewPostViewController.swift */; };
 		5F635C121D1C6A6800C6A801 /* FilterChoice2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F635C111D1C6A6800C6A801 /* FilterChoice2ViewController.swift */; };
 		5FEA1A0C1D1CA44F005FE3C6 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48F9D1D1B89D90031C5FC /* SearchCollectionViewCell.swift */; };
@@ -47,10 +47,10 @@
 		46EBD6381D1859B200361628 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		46EBD63A1D1859D700361628 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		46EBD63E1D18894800361628 /* PhotoDisplay.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PhotoDisplay.storyboard; sourceTree = "<group>"; };
-		46EBD6401D18895C00361628 /* PhotoDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDisplayViewController.swift; sourceTree = "<group>"; };
 		46EBD6421D18AE2B00361628 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		46EBD6461D19943200361628 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46EBD6481D19A17600361628 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		46EBD65A1D1C9EAE00361628 /* PhotoDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoDisplayViewController.swift; path = ../../PhotoDisplayViewController.swift; sourceTree = "<group>"; };
 		5F0C00DD1D19FDA800784A03 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5F0C00DF1D1A07D000784A03 /* FilterChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterChoiceViewController.swift; sourceTree = "<group>"; };
 		5F0C00E11D1A1DF300784A03 /* FiltersList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersList.swift; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 				5F0C00DD1D19FDA800784A03 /* CameraViewController.swift */,
 				46EBD6481D19A17600361628 /* ProfileViewController.swift */,
 				46EBD63E1D18894800361628 /* PhotoDisplay.storyboard */,
-				46EBD6401D18895C00361628 /* PhotoDisplayViewController.swift */,
+				46EBD65A1D1C9EAE00361628 /* PhotoDisplayViewController.swift */,
 				F9D0A2351D14B03C000AB9E0 /* Assets.xcassets */,
 				F9D0A2371D14B03C000AB9E0 /* LaunchScreen.storyboard */,
 				F9D0A23A1D14B03C000AB9E0 /* Info.plist */,
@@ -230,6 +230,7 @@
 				TargetAttributes = {
 					F9D0A22A1D14B03B000AB9E0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = EQ39KCD6SJ;
 					};
 				};
 			};
@@ -320,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4623D16B1D1D87DB00A9C30D /* FilterCollectionViewCell.swift in Sources */,
 				5FEA1A0C1D1CA44F005FE3C6 /* SearchCollectionViewCell.swift in Sources */,
 				F9B48F921D19EF5D0031C5FC /* Post.swift in Sources */,
 				5F635C121D1C6A6800C6A801 /* FilterChoice2ViewController.swift in Sources */,
@@ -331,14 +333,13 @@
 				46EBD6491D19A17600361628 /* ProfileViewController.swift in Sources */,
 				46EBD6431D18AE2B00361628 /* CreateAccountViewController.swift in Sources */,
 				5F0C00E01D1A07D100784A03 /* FilterChoiceViewController.swift in Sources */,
-				46EBD6411D18895C00361628 /* PhotoDisplayViewController.swift in Sources */,
+				46EBD65B1D1C9EAE00361628 /* PhotoDisplayViewController.swift in Sources */,
 				F9B48F951D1A09020031C5FC /* AccountViewController.swift in Sources */,
 				F9B48F9C1D1B877C0031C5FC /* SearchViewController.swift in Sources */,
 				F9B48F991D1AD5090031C5FC /* User.swift in Sources */,
 				46EBD63B1D1859D700361628 /* LoginViewController.swift in Sources */,
 				5F0C00E21D1A1DF300784A03 /* FiltersList.swift in Sources */,
 				F9D0A2311D14B03C000AB9E0 /* ViewController.swift in Sources */,
-				5F0C00E41D1A24CD00784A03 /* FilterCollectionViewCell.swift in Sources */,
 				F9D0A22F1D14B03C000AB9E0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +456,8 @@
 			baseConfigurationReference = 2E0CB590AEEF27F9FEA74FD9 /* Pods-InstaClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
@@ -471,6 +474,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.caleblwoods.InstaClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -479,6 +483,8 @@
 			baseConfigurationReference = A4A103523C9F25AB142A66E3 /* Pods-InstaClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
@@ -495,6 +501,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.caleblwoods.InstaClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
