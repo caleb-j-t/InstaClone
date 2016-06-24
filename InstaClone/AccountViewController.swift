@@ -62,15 +62,15 @@ class AccountViewController: UIViewController, UIImagePickerControllerDelegate, 
                     if let quote = quote {
                         self.userQuoteTextView.text = quote
                     }
+                    
+                    let photoURL = data["profilepicture"] as? String
+                    if let photoURL = photoURL {
+                        self.profilePictureImageView.kf_setImageWithURL(NSURL(string: photoURL)!, placeholderImage: nil, optionsInfo: [.ForceRefresh])
+                    }
                 }
             })
            
         }
-        
-        if let photoURL = authUser?.photoURL {
-        profilePictureImageView.kf_setImageWithURL(photoURL, placeholderImage: nil, optionsInfo: [.ForceRefresh])
-        }
-        
     }
 
 

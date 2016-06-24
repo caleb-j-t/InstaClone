@@ -11,7 +11,6 @@ import FirebaseAuth
 
 class User: NSObject {
 
-    var authUserObject: FIRUser?
     var userID: String?
     var displayName: String?
     var urlForProfilePic: NSURL?

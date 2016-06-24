@@ -14,7 +14,7 @@ import FirebaseAuth
 import Kingfisher
 import FBSDKCoreKit
 
-class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate {
+class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate, UIGestureRecognizerDelegate {
     
     let postRef = FIRDatabase.database().reference().child("posts")
     var userRef: FIRDatabaseReference?
@@ -25,6 +25,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var statusText: String?
     var arrayForTable: Array = [Post]()
     var contentHeight: CGFloat?
+    var offsetAfterDismiss: CGFloat?
     
     var tappedDict: Post?
     
@@ -35,12 +36,20 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadFeed()
+        
         tabBarController?.delegate = self
         
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
+        if let offsetAfterDismiss = offsetAfterDismiss {
+            tableView.contentOffset.y = offsetAfterDismiss
+        }
+    }
+    
+    func loadFeed(){
         self.postRef.observeEventType(.Value) { (snap: FIRDataSnapshot) in
             self.arrayForTable = []
             self.receivedPosts = (snap.value as? NSDictionary)!
@@ -64,10 +73,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.tableView.contentOffset.y = self.tableScrollPosition
             }
         }
-        
     }
-    
-   
     
     func likeButtonClicked(sender: UIButton){
        
@@ -147,20 +153,21 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         label.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7)
         
         let tapRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(self.handleTapped))
+        tapRecognizer.delegate = self
         label.addGestureRecognizer(tapRecognizer)
         
-        tappedDict = dictForCell
         
         return label
     }
     
-    func handleTapped() {
-        if let tappedDict = tappedDict {
-            
-        print("label was tapped for " + tappedDict.postedby!)
-        }
+    func handleTapped(gestureRecognizer: UIGestureRecognizer) {
+        
+        
+           let section = gestureRecognizer.view?.tag
+            tappedDict = arrayForTable[section!]
         
         performSegueWithIdentifier("ToProfile", sender: self)
+        offsetAfterDismiss = tableView.contentOffset.y
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
